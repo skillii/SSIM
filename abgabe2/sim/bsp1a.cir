@@ -1,0 +1,22 @@
+* Y:\SSIM\UE\Abgabe2\bsp1a.sch
+
+* Schematics Version 8.0 - July 1997
+* Thu Mar 22 22:36:17 2012
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "bsp1a.net"
+.INC "bsp1a.als"
+
+
+.probe
+
+
+.END

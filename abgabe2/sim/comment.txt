@@ -1,0 +1,41 @@
+* Schematics Aliases *
+
+
+
+
+
+** Analysis setup **
+.OP 		;calculate and display Bias point
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.ALIASES					
+V_V1            V1(+=$N_0001 -=0 )		;create V1 and relate pin + to $N_0001 and pin - with 0
+R_R1            R1(1=$N_0001 2=$N_0002 )	;create R1 and relate pin 1 to $N_0001 and pin 2 with $N_0002
+R_R2            R2(1=$N_0004 2=$N_0003 )	;create R1 and relate pin 1 to $N_0004 and pin 2 with $N_0003
+C_C1            C1(1=$N_0002 2=$N_0004 )	;create R1 and relate pin 1 to $N_0002 and pin 2 with $N_0004
+R_R3            R3(1=$N_0004 2=0 )	;create R1 and relate pin 1 to $N_0004 and pin 2 with $N_0001
+L_L1            L1(1=$N_0002 2=0 )	;create R1 and relate pin 1 to $N_0002 and pin 2 with $N_0001
+I_I1            I1(+=$N_0003 -=0 )	;create R1 and relate pin + to $N_0003 and pin - with 0
+.ENDALIASES
+
+
+
+* Schematics Netlist *
+
+
+
+V_V1         $N_0001 0 5		;part V_V1; between net $N_0001 and 0, 5V
+R_R1         $N_0001 $N_0002  5  	;part R_R1; between net $N_0001 and $N_0002, 5Ohm
+R_R2         $N_0004 $N_0003  2  	;part R_R2; between net $N_0004 and $N_0003, 2Ohm
+C_C1         $N_0002 $N_0004  1n  	;part C_C1; between net $N_0002 and $N_0004, 1nF
+R_R3         $N_0004 0  2  		;part R_R3; between net $N_0004 and 0, 2Ohm
+L_L1         $N_0002 0  10uH  		;part L_L1; between net $N_0002 and 0, 10uH
+I_I1         $N_0003 0 DC 1  		;part I_I1; between net $N_0003 and 0, 1A
+
+.probe		;Write results from DC AC and transient analysis to a data file
+
+
+.END

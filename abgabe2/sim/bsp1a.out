@@ -1,0 +1,68 @@
+
+**** 03/22/112 22:36:18 ******** NT Evaluation PSpice (July 1997) ************
+
+ * Y:\SSIM\UE\Abgabe2\bsp1a.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 8.0 - July 1997
+* Thu Mar 22 22:36:17 2012
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "bsp1a.net"
+
+**** INCLUDING bsp1a.net ****
+* Schematics Netlist *
+
+
+
+R_R1         0 $N_0001  2  
+V_V1         $N_0002 0 DC=5
+I_I1         $N_0003 $N_0001 DC 1  
+L_L1         $N_0004 0  10uH  
+R_R2         $N_0002 $N_0004  5  
+R_R3         $N_0005 $N_0003  2  
+C_C1         $N_0004 $N_0005  1n  
+
+**** RESUMING bsp1a.cir ****
+.INC "bsp1a.als"
+
+
+
+**** INCLUDING bsp1a.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_R1            R1(1=0 2=$N_0001 )
+V_V1            V1(+=$N_0002 -=0 )
+I_I1            I1(+=$N_0003 -=$N_0001 )
+L_L1            L1(1=$N_0004 2=0 )
+R_R2            R2(1=$N_0002 2=$N_0004 )
+R_R3            R3(1=$N_0005 2=$N_0003 )
+C_C1            C1(1=$N_0004 2=$N_0005 )
+.ENDALIASES
+
+
+**** RESUMING bsp1a.cir ****
+.probe
+
+
+.END
+
+ERROR -- Node $N_0003 is floating
+ERROR -- Node $N_0005 is floating

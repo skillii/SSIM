@@ -1,0 +1,193 @@
+
+**** 03/23/112 12:01:36 ******** NT Evaluation PSpice (July 1997) ************
+
+ * Y:\SSIM\UE\REPO\ABGABE2\SIM\bsp2.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 8.0 - July 1997
+* Fri Mar 23 12:01:36 2012
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "bsp2.net"
+
+**** INCLUDING bsp2.net ****
+* Schematics Netlist *
+
+
+
+R_R1         $N_0002 $N_0001  560  
+I_I1         0 $N_0001 DC 10mA  
+D_D1         $N_0002 0 D1N4002 
+R_R6         $N_0004 $N_0003  560  
+I_I6         0 $N_0003 DC 10mA  
+D_D4         $N_0004 0 D1N750 
+R_R2         $N_0006 $N_0005  560  
+I_I2         0 $N_0005 DC 10mA  
+I_I3         $N_0006 0 DC -2.158  
+R_R3         $N_0006 0  347m  
+R_R7         $N_0008 $N_0007  560  
+I_I7         0 $N_0007 DC 10mA  
+I_I8         $N_0008 0 DC -2.0822  
+R_R8         $N_0008 0  359m  
+R_R4         $N_0010 $N_0009  560  
+I_I4         0 $N_0009 DC 10mA  
+R_R5         $N_0010 0  909m  
+I_I5         $N_0010 0 DC -0.7722  
+R_R9         $N_0012 $N_0011  560  
+I_I9         0 $N_0011 DC 10mA  
+R_R10         $N_0012 0  2.5527  
+I_I10         $N_0012 0 DC -0.241  
+
+**** RESUMING bsp2.cir ****
+.INC "bsp2.als"
+
+
+
+**** INCLUDING bsp2.als ****
+* Schematics Aliases *
+
+.ALIASES
+R_R1            R1(1=$N_0002 2=$N_0001 )
+I_I1            I1(+=0 -=$N_0001 )
+D_D1            D1(1=$N_0002 2=0 )
+R_R6            R6(1=$N_0004 2=$N_0003 )
+I_I6            I6(+=0 -=$N_0003 )
+D_D4            D4(1=$N_0004 2=0 )
+R_R2            R2(1=$N_0006 2=$N_0005 )
+I_I2            I2(+=0 -=$N_0005 )
+I_I3            I3(+=$N_0006 -=0 )
+R_R3            R3(1=$N_0006 2=0 )
+R_R7            R7(1=$N_0008 2=$N_0007 )
+I_I7            I7(+=0 -=$N_0007 )
+I_I8            I8(+=$N_0008 -=0 )
+R_R8            R8(1=$N_0008 2=0 )
+R_R4            R4(1=$N_0010 2=$N_0009 )
+I_I4            I4(+=0 -=$N_0009 )
+R_R5            R5(1=$N_0010 2=0 )
+I_I5            I5(+=$N_0010 -=0 )
+R_R9            R9(1=$N_0012 2=$N_0011 )
+I_I9            I9(+=0 -=$N_0011 )
+R_R10           R10(1=$N_0012 2=0 )
+I_I10           I10(+=$N_0012 -=0 )
+.ENDALIASES
+
+
+**** RESUMING bsp2.cir ****
+.probe
+
+
+.END
+
+**** 03/23/112 12:01:36 ******** NT Evaluation PSpice (July 1997) ************
+
+ * Y:\SSIM\UE\REPO\ABGABE2\SIM\bsp2.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4002         D1N750          
+          IS   14.110000E-09  880.500000E-18 
+           N    1.984                        
+         ISR  100.000000E-12    1.859000E-09 
+         IKF   94.81                         
+          BV  100.1             4.7          
+         IBV   10                .020245     
+         NBV                    1.6989       
+        IBVL                    1.955600E-03 
+        NBVL                   14.976        
+          RS     .03389          .25         
+          TT    4.761000E-06                 
+         CJO   51.170000E-12  175.000000E-12 
+          VJ     .3905           .75         
+           M     .2762           .5516       
+        TBV1                  -21.277000E-06 
+
+
+**** 03/23/112 12:01:36 ******** NT Evaluation PSpice (July 1997) ************
+
+ * Y:\SSIM\UE\REPO\ABGABE2\SIM\bsp2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    6.2913                   ($N_0002)     .6913                       
+
+($N_0003)    6.3761                   ($N_0004)     .7761                       
+
+($N_0005)    6.3523                   ($N_0006)     .7523                       
+
+($N_0007)    6.3511                   ($N_0008)     .7511                       
+
+($N_0009)    6.3110                   ($N_0010)     .7110                       
+
+($N_0011)    6.2407                   ($N_0012)     .6407                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 03/23/112 12:01:36 ******** NT Evaluation PSpice (July 1997) ************
+
+ * Y:\SSIM\UE\REPO\ABGABE2\SIM\bsp2.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D1        D_D4      
+MODEL        D1N4002     D1N750    
+ID           1.00E-02    1.00E-02 
+VD           6.91E-01    7.76E-01 
+REQ          5.13E+00    2.74E+00 
+CAP          9.28E-07    4.07E-10 
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .75
+

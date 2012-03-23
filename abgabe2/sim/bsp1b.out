@@ -1,0 +1,114 @@
+
+**** 03/22/112 22:37:16 ******** NT Evaluation PSpice (July 1997) ************
+
+ * Y:\SSIM\UE\Abgabe2\bsp1b.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 8.0 - July 1997
+* Thu Mar 22 22:37:15 2012
+
+
+
+** Analysis setup **
+.OP 
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "bsp1b.net"
+
+**** INCLUDING bsp1b.net ****
+* Schematics Netlist *
+
+
+
+V_V1         $N_0001 0 5
+R_R1         $N_0001 $N_0002  5  
+R_R2         $N_0004 $N_0003  2  
+C_C1         $N_0002 $N_0004  1n  
+R_R3         $N_0004 0  2  
+L_L1         $N_0002 0  10uH  
+I_I1         $N_0003 0 DC 1  
+
+**** RESUMING bsp1b.cir ****
+.INC "bsp1b.als"
+
+
+
+**** INCLUDING bsp1b.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_V1            V1(+=$N_0001 -=0 )
+R_R1            R1(1=$N_0001 2=$N_0002 )
+R_R2            R2(1=$N_0004 2=$N_0003 )
+C_C1            C1(1=$N_0002 2=$N_0004 )
+R_R3            R3(1=$N_0004 2=0 )
+L_L1            L1(1=$N_0002 2=0 )
+I_I1            I1(+=$N_0003 -=0 )
+.ENDALIASES
+
+
+**** RESUMING bsp1b.cir ****
+.probe
+
+
+.END
+
+**** 03/22/112 22:37:16 ******** NT Evaluation PSpice (July 1997) ************
+
+ * Y:\SSIM\UE\Abgabe2\bsp1b.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    5.0000                   ($N_0002)    0.0000                       
+
+($N_0003)   -4.0000                   ($N_0004)   -2.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.000E+00
+
+    TOTAL POWER DISSIPATION   5.00E+00  WATTS
+
+
+**** 03/22/112 22:37:16 ******** NT Evaluation PSpice (July 1997) ************
+
+ * Y:\SSIM\UE\Abgabe2\bsp1b.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .28
+
