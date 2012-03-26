@@ -1,0 +1,174 @@
+
+**** 03/26/112 20:19:14 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue2_ex3\pmos_output.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 8.0 - July 1997
+* Mon Mar 26 20:01:43 2012
+
+
+
+** Analysis setup **
+.DC LIN V_V_DS 0 20 0.01 
++  V_V_GS LIST 
++ 5 6 7
+.TEMP -10 27 85
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "3_pmos_output.net"
+
+**** INCLUDING 3_pmos_output.net ****
+* Schematics Netlist *
+
+
+
+M_M1         $N_0002 $N_0001 0 0 IRF9140
+V_V_GS         0 $N_0001   
+V_V_DS         0 $N_0002   
+
+**** RESUMING 3_pmos_output.cir ****
+.INC "3_pmos_output.als"
+
+
+
+**** INCLUDING 3_pmos_output.als ****
+* Schematics Aliases *
+
+.ALIASES
+M_M1            M1(d=$N_0002 g=$N_0001 s=0 s=0 )
+V_V_GS          V_GS(+=0 -=$N_0001 )
+V_V_DS          V_DS(+=0 -=$N_0002 )
+.ENDALIASES
+
+
+**** RESUMING 3_pmos_output.cir ****
+.probe
+
+
+.END
+
+**** 03/26/112 20:19:14 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue2_ex3\pmos_output.sch
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IRF9140         
+               PMOS            
+       LEVEL    3            
+           L    2.000000E-06 
+           W    1.9          
+         VTO   -3.67         
+          KP   10.150000E-06 
+       GAMMA    0            
+         PHI     .6          
+          RD     .06066      
+          RS     .0706       
+          RG     .811        
+         RDS  444.400000E+03 
+          IS   52.230000E-18 
+          JS    0            
+           N    2            
+          PB     .8          
+        PBSW     .8          
+         CBD    2.141000E-09 
+          CJ    0            
+        CJSW    0            
+          TT  140.000000E-09 
+        CGSO  877.200000E-12 
+        CGDO  369.300000E-12 
+         TOX  100.000000E-09 
+          XJ    0            
+          UO  300            
+       DELTA    0            
+         ETA    0            
+       KAPPA    1.000000E-12 
+      DIOMOD    1            
+         VFB    0            
+          U0    0            
+        TEMP    0            
+         VDD    0            
+       XPART    0            
+
+
+**** 03/26/112 20:19:14 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue2_ex3\pmos_output.sch
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =  -10.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+ NAME         VTO        PHI         PB     IS(JS)         KP         UO
+ IRF9140   -3.716E+00  6.819E-01  8.573E-01  8.019E-20  1.236E-05  3.654E+02
+
+**** 03/26/112 20:19:14 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue2_ex3\pmos_output.sch
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+ NAME         VTO        PHI         PB     IS(JS)         KP         UO
+ IRF9140   -3.670E+00  6.000E-01  8.000E-01  5.223E-17  1.015E-05  3.000E+02
+
+**** 03/26/112 20:19:14 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue2_ex3\pmos_output.sch
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   85.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** MOSFET MODEL PARAMETERS
+ NAME         VTO        PHI         PB     IS(JS)         KP         UO
+ IRF9140   -3.596E+00  4.676E-01  7.063E-01  9.602E-14  7.787E-06  2.302E+02
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .29
+

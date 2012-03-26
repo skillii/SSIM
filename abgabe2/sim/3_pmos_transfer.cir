@@ -1,0 +1,25 @@
+* C:\MSimEv_8\Projects\ue2_ex3\pmos_transfer.sch
+
+* Schematics Version 8.0 - July 1997
+* Sat Mar 24 19:10:26 2012
+
+
+
+** Analysis setup **
+.DC LIN V_V_GS 0 6 0.01 
++  V_V_DS LIST 
++ 10 20 30
+.TEMP -10 27 85
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "3_pmos_transfer.net"
+.INC "3_pmos_transfer.als"
+
+
+.probe
+
+
+.END

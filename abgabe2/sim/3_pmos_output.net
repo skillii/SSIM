@@ -1,0 +1,7 @@
+* Schematics Netlist *
+
+
+
+M_M1         $N_0002 $N_0001 0 0 IRF9140
+V_V_GS         0 $N_0001   
+V_V_DS         0 $N_0002   

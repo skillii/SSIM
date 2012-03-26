@@ -1,0 +1,7 @@
+* Schematics Netlist *
+
+
+
+V_V_CE         0 $N_0001   
+V_V_BE         0 $N_0002   
+Q_Q1         $N_0001 $N_0002 0 Q2N3906

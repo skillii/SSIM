@@ -1,0 +1,25 @@
+* C:\MSimEv_8\Projects\ue2_ex3\pnp_output.sch
+
+* Schematics Version 8.0 - July 1997
+* Sat Mar 24 18:10:56 2012
+
+
+
+** Analysis setup **
+.DC LIN V_V_CE 0 15 0.01 
++  V_V_BE LIST 
++ 0.75 0.85 0.95
+.TEMP -10 27 85
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "3_pnp_output.net"
+.INC "3_pnp_output.als"
+
+
+.probe
+
+
+.END
