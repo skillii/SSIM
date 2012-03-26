@@ -1,4 +1,4 @@
-*version 8.0 1037954420
+*version 8.0 2125854610
 u 199
 R? 11
 D? 5
@@ -26,11 +26,11 @@ connectViaLocalLabels 0
 NoStim4ExtIFPortsWarnings 1
 AutoGenStim4ExtIFPorts 1
 @index
-pageloc 1 0 8658 
+pageloc 1 0 8663 
 @status
-n 0 112:02:23:12:01:36;1332500496 e 
-s 2832 112:02:23:12:01:36;1332500496 e 
-c 112:02:23:12:01:33;1332500493
+n 0 112:02:26:19:26:59;1332782819 e 
+s 0 112:02:26:19:27:00;1332782820 e 
+c 112:02:26:19:26:56;1332782816
 *page 1 0 970 720 iA
 @ports
 port 2 GND_ANALOG 70 160 h
@@ -52,12 +52,6 @@ a 1 u 13 0 -9 21 hcn 100 DC=10mA
 a 0 sp 11 0 0 50 hln 100 PART=IDC
 a 0 a 0:13 0 0 0 hln 100 PKGREF=I1
 a 1 ap 9 0 20 10 hcn 100 REFDES=I1
-part 4 D1N4002 230 110 d
-a 0 sp 11 0 17 -26 hln 100 PART=D1N4002
-a 0 s 0:13 0 0 0 hln 100 PKGTYPE=DO-41
-a 0 s 0:13 0 0 0 hln 100 GATE=
-a 0 a 0:13 0 0 0 hln 100 PKGREF=D1
-a 0 ap 9 0 17 4 hln 100 REFDES=D1
 part 93 R 190 270 u
 a 0 u 13 0 15 25 hln 100 VALUE=560
 a 0 sp 0 0 0 10 hlb 100 PART=R
@@ -88,18 +82,6 @@ a 1 u 13 0 -9 21 hcn 100 DC=10mA
 a 0 sp 11 0 0 50 hln 100 PART=IDC
 a 0 a 0:13 0 0 0 hln 100 PKGREF=I2
 a 1 ap 9 0 20 10 hcn 100 REFDES=I2
-part 44 IDC 550 90 h
-a 1 u 13 0 -9 21 hcn 100 DC=-2.158
-a 0 sp 11 0 0 50 hln 100 PART=IDC
-a 0 a 0:13 0 0 0 hln 100 PKGREF=I3
-a 1 ap 9 0 20 10 hcn 100 REFDES=I3
-part 43 R 510 90 d
-a 0 u 13 0 20 35 hln 100 VALUE=347m
-a 0 sp 0 0 0 10 hlb 100 PART=R
-a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
-a 0 s 0:13 0 0 0 hln 100 GATE=
-a 0 a 0:13 0 0 0 hln 100 PKGREF=R3
-a 0 ap 9 0 15 0 hln 100 REFDES=R3
 part 100 R 470 270 u
 a 0 u 13 0 15 25 hln 100 VALUE=560
 a 0 sp 0 0 0 10 hlb 100 PART=R
@@ -112,18 +94,6 @@ a 1 u 13 0 -9 21 hcn 100 DC=10mA
 a 0 sp 11 0 0 50 hln 100 PART=IDC
 a 0 a 0:13 0 0 0 hln 100 PKGREF=I7
 a 1 ap 9 0 20 10 hcn 100 REFDES=I7
-part 102 IDC 550 270 h
-a 1 u 13 0 -9 21 hcn 100 DC=-2.0822
-a 0 sp 11 0 0 50 hln 100 PART=IDC
-a 0 a 0:13 0 0 0 hln 100 PKGREF=I8
-a 1 ap 9 0 20 10 hcn 100 REFDES=I8
-part 103 R 510 270 d
-a 0 u 13 0 20 35 hln 100 VALUE=359m
-a 0 sp 0 0 0 10 hlb 100 PART=R
-a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
-a 0 s 0:13 0 0 0 hln 100 GATE=
-a 0 a 0:13 0 0 0 hln 100 PKGREF=R8
-a 0 ap 9 0 15 0 hln 100 REFDES=R8
 part 67 R 740 90 u
 a 0 u 13 0 15 25 hln 100 VALUE=560
 a 0 sp 0 0 0 10 hlb 100 PART=R
@@ -136,18 +106,6 @@ a 1 u 13 0 -9 21 hcn 100 DC=10mA
 a 0 sp 11 0 0 50 hln 100 PART=IDC
 a 0 a 0:13 0 0 0 hln 100 PKGREF=I4
 a 1 ap 9 0 20 10 hcn 100 REFDES=I4
-part 70 R 780 90 d
-a 0 u 13 0 20 35 hln 100 VALUE=909m
-a 0 sp 0 0 0 10 hlb 100 PART=R
-a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
-a 0 s 0:13 0 0 0 hln 100 GATE=
-a 0 a 0:13 0 0 0 hln 100 PKGREF=R5
-a 0 ap 9 0 15 0 hln 100 REFDES=R5
-part 69 IDC 820 90 h
-a 1 u 13 0 -9 21 hcn 100 DC=-0.7722
-a 0 sp 11 0 0 50 hln 100 PART=IDC
-a 0 a 0:13 0 0 0 hln 100 PKGREF=I5
-a 1 ap 9 0 20 10 hcn 100 REFDES=I5
 part 104 R 740 270 u
 a 0 u 13 0 15 25 hln 100 VALUE=560
 a 0 sp 0 0 0 10 hlb 100 PART=R
@@ -160,23 +118,65 @@ a 1 u 13 0 -9 21 hcn 100 DC=10mA
 a 0 sp 11 0 0 50 hln 100 PART=IDC
 a 0 a 0:13 0 0 0 hln 100 PKGREF=I9
 a 1 ap 9 0 20 10 hcn 100 REFDES=I9
+part 4 D1N4002 230 110 d
+a 0 sp 11 0 7 4 hln 100 PART=D1N4002
+a 0 s 0:13 0 0 0 hln 100 PKGTYPE=DO-41
+a 0 s 0:13 0 0 0 hln 100 GATE=
+a 0 a 0:13 0 0 0 hln 100 PKGREF=D1
+a 0 ap 9 0 17 4 hln 100 REFDES=D1
+part 103 R 510 270 d
+a 0 u 13 0 35 40 hln 100 VALUE=359m
+a 0 sp 0 0 0 10 hlb 100 PART=R
+a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
+a 0 s 0:13 0 0 0 hln 100 GATE=
+a 0 a 0:13 0 0 0 hln 100 PKGREF=R8
+a 0 ap 9 0 25 35 hln 100 REFDES=R8
+part 43 R 510 90 d
+a 0 u 13 0 35 40 hln 100 VALUE=347m
+a 0 sp 0 0 0 10 hlb 100 PART=R
+a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
+a 0 s 0:13 0 0 0 hln 100 GATE=
+a 0 a 0:13 0 0 0 hln 100 PKGREF=R3
+a 0 ap 9 0 25 30 hln 100 REFDES=R3
+part 44 IDC 550 90 h
+a 1 u 13 0 -9 21 hcn 100 DC=-2.1582
+a 0 sp 11 0 0 50 hln 100 PART=IDC
+a 0 a 0:13 0 0 0 hln 100 PKGREF=I3
+a 1 ap 9 0 20 10 hcn 100 REFDES=I3
+part 70 R 780 90 d
+a 0 u 13 0 35 40 hln 100 VALUE=908.3m
+a 0 ap 9 0 25 30 hln 100 REFDES=R5
+a 0 sp 0 0 0 10 hlb 100 PART=R
+a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
+a 0 s 0:13 0 0 0 hln 100 GATE=
+a 0 a 0:13 0 0 0 hln 100 PKGREF=R5
+part 69 IDC 820 90 h
+a 1 u 13 0 -9 21 hcn 100 DC=-0.7737
+a 0 sp 11 0 0 50 hln 100 PART=IDC
+a 0 a 0:13 0 0 0 hln 100 PKGREF=I5
+a 1 ap 9 0 20 10 hcn 100 REFDES=I5
+part 102 IDC 550 270 h
+a 0 sp 11 0 0 50 hln 100 PART=IDC
+a 0 a 0:13 0 0 0 hln 100 PKGREF=I8
+a 1 ap 9 0 20 10 hcn 100 REFDES=I8
+a 1 u 13 0 -9 21 hcn 100 DC=-2.1553
 part 106 R 780 270 d
-a 0 u 13 0 20 35 hln 100 VALUE=2.5527
+a 0 ap 9 0 20 35 hln 100 REFDES=R10
 a 0 sp 0 0 0 10 hlb 100 PART=R
 a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
 a 0 s 0:13 0 0 0 hln 100 GATE=
 a 0 a 0:13 0 0 0 hln 100 PKGREF=R10
-a 0 ap 9 0 15 0 hln 100 REFDES=R10
+a 0 u 13 0 30 45 hln 100 VALUE=890.1m
 part 107 IDC 820 270 h
-a 1 u 13 0 -9 21 hcn 100 DC=-0.241
 a 0 sp 11 0 0 50 hln 100 PART=IDC
 a 0 a 0:13 0 0 0 hln 100 PKGREF=I10
 a 1 ap 9 0 20 10 hcn 100 REFDES=I10
+a 1 u 13 0 -9 21 hcn 100 DC=-0.8452
 part 1 titleblk 970 720 h
 a 1 s 13 0 350 10 hcn 100 PAGESIZE=A
 a 1 s 13 0 180 60 hcn 100 PAGETITLE=
-a 1 s 13 0 300 95 hrn 100 PAGENO=1
 a 1 s 13 0 340 95 hrn 100 PAGECOUNT=1
+a 1 s 13 0 300 95 hrn 100 PAGENO=1
 @conn
 w 7
 a 0 up 0:33 0 0 0 hln 100 V=
