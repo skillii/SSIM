@@ -1,4 +1,4 @@
-*version 8.0 529321942
+*version 8.0 3807318849
 u 54
 V? 2
 R? 4
@@ -70,6 +70,11 @@ a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
 a 0 s 0:13 0 0 0 hln 100 GATE=
 a 0 ap 9 0 15 0 hln 100 REFDES=R1
 a 0 a 0:13 0 0 0 hln 100 PKGREF=R1
+part 47 idc 510 130 h
+a 0 sp 11 0 15 50 hln 100 PART=idc
+a 0 a 0:13 0 0 0 hln 100 PKGREF=I1
+a 1 ap 9 0 25 25 hcn 100 REFDES=I1
+a 1 u 13 0 26 36 hcn 100 DC=1
 part 43 r 430 100 h
 a 0 u 13 0 15 25 hln 100 VALUE=2
 a 0 sp 0 0 0 10 hlb 100 PART=r
@@ -77,11 +82,6 @@ a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
 a 0 s 0:13 0 0 0 hln 100 GATE=
 a 0 ap 9 0 15 0 hln 100 REFDES=R2
 a 0 a 0:13 0 0 0 hln 100 PKGREF=R2
-part 47 idc 510 130 h
-a 0 sp 11 0 15 50 hln 100 PART=idc
-a 0 a 0:13 0 0 0 hln 100 PKGREF=I1
-a 1 ap 9 0 25 25 hcn 100 REFDES=I1
-a 1 u 13 0 26 36 hcn 100 DC=1
 part 1 titleblk 970 720 h
 a 1 s 13 0 350 10 hcn 100 PAGESIZE=A
 a 1 s 13 0 180 60 hcn 100 PAGETITLE=
@@ -105,13 +105,6 @@ s 270 100 300 100 8
 a 0 up 33 0 300 84 hct 100 V=
 s 300 100 330 100 51
 s 300 130 300 100 6
-w 13
-a 0 up 0:33 0 0 0 hln 100 V=
-s 430 100 400 100 14
-a 0 up 33 0 415 99 hct 100 V=
-s 400 100 360 100 18
-a 0 up 33 0 375 84 hct 100 V=
-s 400 130 400 100 16
 w 20
 a 0 up 0:33 0 0 0 hln 100 V=
 s 510 100 470 100 19
@@ -122,6 +115,13 @@ a 0 up 0:33 0 0 0 hln 100 V=
 s 230 100 170 100 2
 a 0 up 33 0 185 84 hct 100 V=
 s 170 100 170 130 4
+w 13
+a 0 up 0:33 0 0 0 hln 100 V=
+s 430 100 400 100 14
+a 0 up 33 0 415 99 hct 100 V=
+s 400 100 360 100 18
+a 0 up 33 0 375 84 hct 100 V=
+s 400 130 400 100 16
 @junction
 j 400 100
 + w 13
