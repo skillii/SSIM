@@ -1,0 +1,35 @@
+*******
+**** Modelle fuer integrierte MOS-FETs in einer 3um Technologie
+*******
+
+.MODEL NMOS NMOS
++ LEVEL=1 KP=30u VTO=1 GAMMA=0.5 LAMBDA=0.02
++ PHI=0.6 TOX=57.5n UO=500 CJ=0.2m MJ=0.5 PB=0.8
++ JS=10u RSH=25 CGSO=500p CGDO=500p
+
+.MODEL PMOS PMOS
++ LEVEL=1 VTO=-1 KP=12u GAMMA=0.5 LAMBDA=0.033
++ PHI=0.6 TOX=57.5n UO=200 CJ=0.2m MJ=0.5 PB=0.8
++ JS=20u RSH=50 CGSO=500p CGDO=500p
+
+.model nmos2 nmos level=2
++ vto=0.73 js=10u pb=0.9
++ cgso=300p cgdo=300p cgbo=150p rsh=25
++ cj=0.36m mj=0.4 cjsw=250p mjsw=0.2
++ tox=25n nsub=3e16 nfs=5e11
++ xj=0.18u ld=0 wd=0.4u
++ uo=500 ucrit=0.3e6 uexp=0.25
++ vmax=0.07e6 neff=5 delta=0.3
++ kf=1e-26 af=1.3
+
+.model pmos2 pmos level=2
++ vto=-0.75 js=20u pb=0.9
++ cgso=300p cgdo=300p cgbo=150p rsh=45
++ cj=0.34m mj=0.5 cjsw=220p mjsw=0.2
++ tox=25n nsub=1.8e16 nfs=1.3e12
++ xj=0.06u ld=0 wd=0.4u
++ uo=170 ucrit=0.2e6 uexp=0.25
++ vmax=0.05e6 neff=3 delta=0.8
++ kf=5e-28 af=1.3
+
+

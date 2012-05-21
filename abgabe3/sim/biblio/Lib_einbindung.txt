@@ -1,0 +1,20 @@
+Im Installationsverzeichnis von PSPICE (z.B.: C:\programme\msimev_8) gibt es die
+Unterverzeichnisse <lib> und <userlib>. Im Verzeichnis <lib> sollte die Datei
+"nom.lib" drinnen sein. Den Inhalt der Datei "biblio.zip" entpacken Sie in
+das Verzeichnis <userlib>.
+Damit die Libraries im Simulationsprogramm verfügbar sind, müssen Sie 
+auf diese verweisen. Von der Schematic-Oberfläche erreichen Sie das über 
+folgende Schritte:
+
+Analyses --> Library and Include Files ... --> Browse ...
+
+da wählen Sie der Reihe nach die zu inkludierenden Libraries aus
+und quitieren dann mit 
+
+Add Library*
+
+Nach dem Bestätigen mit OK sollten die Libraries bzw. die darin 
+enthaltenen Modelle in der Simulation verfügbar sein.
+
+mfG
+Peter Söser
