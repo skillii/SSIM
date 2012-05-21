@@ -1,0 +1,250 @@
+
+**** 05/20/112 16:26:13 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 8.0 - July 1997
+* Sun May 20 16:26:13 2012
+
+
+.PARAM         Rval=1k 
+
+** Analysis setup **
+.DC LIN PARAM Rval 1k 1.5k 1 
+.TEMP 0 100
+.OP 
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "1_1.net"
+
+**** INCLUDING 1_1.net ****
+* Schematics Netlist *
+
+
+
+D_D1         0 $N_0001 D1N750 
+D_D2         0 $N_0002 D1N750 
+I_I1         $N_0002 0 DC 3mA  
+V_V1         $N_0003 0 DC 10V  
+V_V2         $N_0004 0 DC 10V  
+R_R2         $N_0004 $N_0002  {Rval}  
+R_R1         $N_0003 $N_0001  {Rval}  
+
+**** RESUMING 1_1.cir ****
+.INC "1_1.als"
+
+
+
+**** INCLUDING 1_1.als ****
+* Schematics Aliases *
+
+.ALIASES
+D_D1            D1(1=0 2=$N_0001 )
+D_D2            D2(1=0 2=$N_0002 )
+I_I1            I1(+=$N_0002 -=0 )
+V_V1            V1(+=$N_0003 -=0 )
+V_V2            V2(+=$N_0004 -=0 )
+R_R2            R2(1=$N_0004 2=$N_0002 )
+R_R1            R1(1=$N_0003 2=$N_0001 )
+.ENDALIASES
+
+
+**** RESUMING 1_1.cir ****
+.probe
+
+
+.END
+
+**** 05/20/112 16:26:13 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_1.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N750          
+          IS  880.500000E-18 
+         ISR    1.859000E-09 
+          BV    4.7          
+         IBV     .020245     
+         NBV    1.6989       
+        IBVL    1.955600E-03 
+        NBVL   14.976        
+          RS     .25         
+         CJO  175.000000E-12 
+          VJ     .75         
+           M     .5516       
+        TBV1  -21.277000E-06 
+
+
+**** 05/20/112 16:26:13 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_1.sch
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =    0.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+ NAME          IS         VJ        CJO         RS        IKF         BV
+ D1N750     9.541E-18  7.965E-01  1.680E-10  2.500E-01  0.000E+00  4.703E+00
+
+**** 05/20/112 16:26:13 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =    0.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    4.6366                   ($N_0002)    4.5839                       
+
+($N_0003)   10.0000                   ($N_0004)   10.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.363E-03
+    V_V2        -5.416E-03
+
+    TOTAL POWER DISSIPATION   1.08E-01  WATTS
+
+
+**** 05/20/112 16:26:13 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =    0.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D1        D_D2      
+MODEL        D1N750      D1N750    
+ID          -5.36E-03   -2.42E-03 
+VD          -4.64E+00   -4.58E+00 
+REQ          1.02E+01    3.39E+01 
+CAP          5.83E-11    5.86E-11 
+**** 05/20/112 16:26:13 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_1.sch
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =  100.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** DIODE MODEL PARAMETERS
+ NAME          IS         VJ        CJO         RS        IKF         BV
+ D1N750     7.493E-12  6.191E-01  1.947E-10  2.500E-01  0.000E+00  4.693E+00
+
+**** 05/20/112 16:26:13 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  100.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    4.6024                   ($N_0002)    4.5326                       
+
+($N_0003)   10.0000                   ($N_0004)   10.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.398E-03
+    V_V2        -5.467E-03
+
+    TOTAL POWER DISSIPATION   1.09E-01  WATTS
+
+
+**** 05/20/112 16:26:13 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =  100.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D1        D_D2      
+MODEL        D1N750      D1N750    
+ID          -5.40E-03   -2.47E-03 
+VD          -4.60E+00   -4.53E+00 
+REQ          1.38E+01    4.46E+01 
+CAP          6.01E-11    6.05E-11 
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .06
+

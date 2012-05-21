@@ -1,0 +1,8 @@
+* Schematics Netlist *
+
+
+
+D_D2         0 $N_0001 D1N750 
+I_I1         $N_0001 0 DC 3mA  
+V_V2         $N_0002 0 DC 10V  
+R_R2         $N_0002 $N_0001  {Rval}  

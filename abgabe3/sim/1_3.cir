@@ -1,0 +1,26 @@
+* C:\MSimEv_8\Projects\ue3\1_3.sch
+
+* Schematics Version 8.0 - July 1997
+* Mon May 21 13:07:42 2012
+
+
+.PARAM         Rval=1.1152k 
+
+** Analysis setup **
+.DC LIN I_I1 2m 4m 0.1m 
+.STEP LIN V_V2 7 13 1 
+.TEMP 27
+.OP 
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "1_3.net"
+.INC "1_3.als"
+
+
+.probe
+
+
+.END

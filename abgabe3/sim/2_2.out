@@ -1,0 +1,1204 @@
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 8.0 - July 1997
+* Mon May 21 20:08:20 2012
+
+
+.PARAM         Rval=72 
+
+** Analysis setup **
+.ac DEC 1000 10000 1000000
+.WCASE AC V([$N_0003]) MAX
++  LIST OUTPUT ALL VARY DEV HI
+.TEMP -25 27 100
+.LIB "C:\MSimEv_8\Projects\ue3\2_1.lib"
+.LIB "C:\MSimEv_8\Projects\ue3\2_2.lib"
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "2_2.net"
+
+**** INCLUDING 2_2.net ****
+* Schematics Netlist *
+
+
+
+V_V1         $N_0001 0 DC 0V AC 1V 
+R_R1         $N_0001 $N_0002 Rbreak-X {Rval}
+C_C1         $N_0002 $N_0003 Cbreak-X 22n 
+R_R2         $N_0003 0 Rbreak-X1 {Rval}
+C_C2         $N_0003 0 Cbreak-X1 22n 
+
+**** RESUMING 2_2.cir ****
+.INC "2_2.als"
+
+
+
+**** INCLUDING 2_2.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_V1            V1(+=$N_0001 -=0 )
+R_R1            R1(1=$N_0001 2=$N_0002 )
+C_C1            C1(1=$N_0002 2=$N_0003 )
+R_R2            R2(1=$N_0003 2=0 )
+C_C2            C2(1=$N_0003 2=0 )
+.ENDALIASES
+
+
+**** RESUMING 2_2.cir ****
+.probe
+
+
+.END
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Rbreak-X        Rbreak-X1       
+           R    1               1            
+         TC1 -200.000000E-06 -200.000000E-06 
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     Capacitor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Cbreak-X        Cbreak-X1       
+           C    1               1            
+         TC1 -300.000000E-06 -300.000000E-06 
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =  -25.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** CAPACITORS
+ NAME        VALUE
+ C_C1       2.234E-08
+ C_C2       2.234E-08
+
+
+
+ **** RESISTORS
+ NAME        VALUE
+ R_R1       7.275E+01
+ R_R2       7.275E+01
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  -25.000 DEG C
+
+                      SENSITIVITY NOMINAL             
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =  -25.000 DEG C
+
+                      SENSITIVITY C_C1 CBREAK-X C     
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+C_C1              Cbreak-X        C                  1.001      
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  -25.000 DEG C
+
+                      SENSITIVITY C_C1 CBREAK-X C     
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =  -25.000 DEG C
+
+                      SENSITIVITY C_C2 CBREAK-X1 C    
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+C_C2              Cbreak-X1       C                  1.001      
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  -25.000 DEG C
+
+                      SENSITIVITY C_C2 CBREAK-X1 C    
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =  -25.000 DEG C
+
+                      SENSITIVITY R_R1 RBREAK-X R     
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+R_R1              Rbreak-X        R                  1.001      
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  -25.000 DEG C
+
+                      SENSITIVITY R_R1 RBREAK-X R     
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =  -25.000 DEG C
+
+                      SENSITIVITY R_R2 RBREAK-X1 R    
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+R_R2              Rbreak-X1       R                  1.001      
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  -25.000 DEG C
+
+                      SENSITIVITY R_R2 RBREAK-X1 R    
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SORTED DEVIATIONS OF V($N_0003)  TEMPERATURE =  -25.000 DEG C
+
+                      SENSITIVITY SUMMARY
+
+******************************************************************************
+
+
+
+
+
+ RUN                    MAXIMUM VALUE
+
+C_C1 Cbreak-X C          .3334 at F =   97.9490E+03
+                        (    .333 % change per 1% change in Model Parameter)
+
+R_R2 Rbreak-X1 R         .3334 at F =   97.9490E+03
+                        (    .333 % change per 1% change in Model Parameter)
+
+NOMINAL                  .3333 at F =   97.9490E+03
+
+C_C2 Cbreak-X1 C         .3332 at F =   97.9490E+03
+                        (   -.3333% change per 1% change in Model Parameter)
+
+R_R1 Rbreak-X R          .3332 at F =   97.9490E+03
+                        (   -.3333% change per 1% change in Model Parameter)
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     WORST CASE ANALYSIS              TEMPERATURE =  -25.000 DEG C
+
+                      WORST  CASE ALL DEVICES         
+
+******************************************************************************
+
+
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =  -25.000 DEG C
+
+                      WORST  CASE ALL DEVICES         
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+C_C1              Cbreak-X        C                  1.15           (Increased)
+C_C2              Cbreak-X1       C                   .85           (Decreased)
+R_R1              Rbreak-X        R                   .99           (Decreased)
+R_R2              Rbreak-X1       R                  1.01           (Increased)
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  -25.000 DEG C
+
+                      WORST  CASE ALL DEVICES         
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SORTED DEVIATIONS OF V($N_0003)  TEMPERATURE =  -25.000 DEG C
+
+                      WORST  CASE SUMMARY
+
+******************************************************************************
+
+
+
+
+
+ RUN                    MAXIMUM VALUE
+
+ALL DEVICES              .3677 at F =   99.0830E+03
+                        ( 110.32% of Nominal)
+
+NOMINAL                  .3333 at F =   97.9490E+03
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** CAPACITORS
+ NAME        VALUE
+ C_C1       2.200E-08
+ C_C2       2.200E-08
+
+
+
+ **** RESISTORS
+ NAME        VALUE
+ R_R1       7.200E+01
+ R_R2       7.200E+01
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      SENSITIVITY NOMINAL             
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =   27.000 DEG C
+
+                      SENSITIVITY C_C1 CBREAK-X C     
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+C_C1              Cbreak-X        C                  1.001      
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      SENSITIVITY C_C1 CBREAK-X C     
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =   27.000 DEG C
+
+                      SENSITIVITY C_C2 CBREAK-X1 C    
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+C_C2              Cbreak-X1       C                  1.001      
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      SENSITIVITY C_C2 CBREAK-X1 C    
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =   27.000 DEG C
+
+                      SENSITIVITY R_R1 RBREAK-X R     
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+R_R1              Rbreak-X        R                  1.001      
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      SENSITIVITY R_R1 RBREAK-X R     
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =   27.000 DEG C
+
+                      SENSITIVITY R_R2 RBREAK-X1 R    
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+R_R2              Rbreak-X1       R                  1.001      
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      SENSITIVITY R_R2 RBREAK-X1 R    
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SORTED DEVIATIONS OF V($N_0003)  TEMPERATURE =   27.000 DEG C
+
+                      SENSITIVITY SUMMARY
+
+******************************************************************************
+
+
+
+
+
+ RUN                    MAXIMUM VALUE
+
+C_C1 Cbreak-X C          .3334 at F =  100.4600E+03
+                        (    .333 % change per 1% change in Model Parameter)
+
+R_R2 Rbreak-X1 R         .3334 at F =  100.4600E+03
+                        (    .333 % change per 1% change in Model Parameter)
+
+NOMINAL                  .3333 at F =  100.4600E+03
+
+C_C2 Cbreak-X1 C         .3332 at F =  100.4600E+03
+                        (   -.3333% change per 1% change in Model Parameter)
+
+R_R1 Rbreak-X R          .3332 at F =  100.4600E+03
+                        (   -.3333% change per 1% change in Model Parameter)
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     WORST CASE ANALYSIS              TEMPERATURE =   27.000 DEG C
+
+                      WORST  CASE ALL DEVICES         
+
+******************************************************************************
+
+
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =   27.000 DEG C
+
+                      WORST  CASE ALL DEVICES         
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+C_C1              Cbreak-X        C                  1.15           (Increased)
+C_C2              Cbreak-X1       C                   .85           (Decreased)
+R_R1              Rbreak-X        R                   .99           (Decreased)
+R_R2              Rbreak-X1       R                  1.01           (Increased)
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      WORST  CASE ALL DEVICES         
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SORTED DEVIATIONS OF V($N_0003)  TEMPERATURE =   27.000 DEG C
+
+                      WORST  CASE SUMMARY
+
+******************************************************************************
+
+
+
+
+
+ RUN                    MAXIMUM VALUE
+
+ALL DEVICES              .3677 at F =  101.6200E+03
+                        ( 110.32% of Nominal)
+
+NOMINAL                  .3333 at F =  100.4600E+03
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     TEMPERATURE-ADJUSTED VALUES      TEMPERATURE =  100.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+ **** CAPACITORS
+ NAME        VALUE
+ C_C1       2.152E-08
+ C_C2       2.152E-08
+
+
+
+ **** RESISTORS
+ NAME        VALUE
+ R_R1       7.095E+01
+ R_R2       7.095E+01
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  100.000 DEG C
+
+                      SENSITIVITY NOMINAL             
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =  100.000 DEG C
+
+                      SENSITIVITY C_C1 CBREAK-X C     
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+C_C1              Cbreak-X        C                  1.001      
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  100.000 DEG C
+
+                      SENSITIVITY C_C1 CBREAK-X C     
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =  100.000 DEG C
+
+                      SENSITIVITY C_C2 CBREAK-X1 C    
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+C_C2              Cbreak-X1       C                  1.001      
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  100.000 DEG C
+
+                      SENSITIVITY C_C2 CBREAK-X1 C    
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =  100.000 DEG C
+
+                      SENSITIVITY R_R1 RBREAK-X R     
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+R_R1              Rbreak-X        R                  1.001      
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  100.000 DEG C
+
+                      SENSITIVITY R_R1 RBREAK-X R     
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =  100.000 DEG C
+
+                      SENSITIVITY R_R2 RBREAK-X1 R    
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+R_R2              Rbreak-X1       R                  1.001      
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  100.000 DEG C
+
+                      SENSITIVITY R_R2 RBREAK-X1 R    
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SORTED DEVIATIONS OF V($N_0003)  TEMPERATURE =  100.000 DEG C
+
+                      SENSITIVITY SUMMARY
+
+******************************************************************************
+
+
+
+
+
+ RUN                    MAXIMUM VALUE
+
+C_C1 Cbreak-X C          .3334 at F =  104.2300E+03
+                        (    .333 % change per 1% change in Model Parameter)
+
+R_R2 Rbreak-X1 R         .3334 at F =  104.2300E+03
+                        (    .333 % change per 1% change in Model Parameter)
+
+NOMINAL                  .3333 at F =  104.2300E+03
+
+C_C2 Cbreak-X1 C         .3332 at F =  104.2300E+03
+                        (   -.3333% change per 1% change in Model Parameter)
+
+R_R1 Rbreak-X R          .3332 at F =  104.2300E+03
+                        (   -.3333% change per 1% change in Model Parameter)
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     WORST CASE ANALYSIS              TEMPERATURE =  100.000 DEG C
+
+                      WORST  CASE ALL DEVICES         
+
+******************************************************************************
+
+
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     UPDATED MODEL PARAMETERS         TEMPERATURE =  100.000 DEG C
+
+                      WORST  CASE ALL DEVICES         
+
+******************************************************************************
+
+
+
+DEVICE            MODEL           PARAMETER       NEW VALUE     
+C_C1              Cbreak-X        C                  1.15           (Increased)
+C_C2              Cbreak-X1       C                   .85           (Decreased)
+R_R1              Rbreak-X        R                   .99           (Decreased)
+R_R2              Rbreak-X1       R                  1.01           (Increased)
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =  100.000 DEG C
+
+                      WORST  CASE ALL DEVICES         
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    0.0000                   ($N_0002)    0.0000                       
+
+($N_0003)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 05/21/112 20:08:20 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\2_2.sch
+
+
+ ****     SORTED DEVIATIONS OF V($N_0003)  TEMPERATURE =  100.000 DEG C
+
+                      WORST  CASE SUMMARY
+
+******************************************************************************
+
+
+
+
+
+ RUN                    MAXIMUM VALUE
+
+ALL DEVICES              .3677 at F =  105.4400E+03
+                        ( 110.32% of Nominal)
+
+NOMINAL                  .3333 at F =  104.2300E+03
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME            1.64
+

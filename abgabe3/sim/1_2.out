@@ -1,0 +1,177 @@
+
+**** 05/20/112 19:17:49 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_2.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 8.0 - July 1997
+* Sun May 20 19:17:49 2012
+
+
+.PARAM         Rval=1.1k 
+
+** Analysis setup **
+.DC LIN TEMP 0 100 0.1 
++  PARAM Rval LIST 
++ 1089 1100 1111
+.OP 
+.LIB "C:\MSimEv_8\Projects\ue3\1_2.lib"
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "1_2.net"
+
+**** INCLUDING 1_2.net ****
+* Schematics Netlist *
+
+
+
+D_D2         0 $N_0001 D1N750 
+I_I1         $N_0001 0 DC 3mA  
+V_V1         $N_0002 0 DC 10V  
+V_V2         $N_0003 0 DC 10V  
+D_D1         0 $N_0004 D1N750 
+R_R1         $N_0002 $N_0004 Rbreak-X {Rval}
+R_R2         $N_0003 $N_0001 Rbreak-X {Rval}
+
+**** RESUMING 1_2.cir ****
+.INC "1_2.als"
+
+
+
+**** INCLUDING 1_2.als ****
+* Schematics Aliases *
+
+.ALIASES
+D_D2            D2(1=0 2=$N_0001 )
+I_I1            I1(+=$N_0001 -=0 )
+V_V1            V1(+=$N_0002 -=0 )
+V_V2            V2(+=$N_0003 -=0 )
+D_D1            D1(1=0 2=$N_0004 )
+R_R1            R1(1=$N_0002 2=$N_0004 )
+R_R2            R2(1=$N_0003 2=$N_0001 )
+.ENDALIASES
+
+
+**** RESUMING 1_2.cir ****
+.probe
+
+
+.END
+
+**** 05/20/112 19:17:49 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_2.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N750          
+          IS  880.500000E-18 
+         ISR    1.859000E-09 
+          BV    4.7          
+         IBV     .020245     
+         NBV    1.6989       
+        IBVL    1.955600E-03 
+        NBVL   14.976        
+          RS     .25         
+         CJO  175.000000E-12 
+          VJ     .75         
+           M     .5516       
+        TBV1  -21.277000E-06 
+
+
+**** 05/20/112 19:17:49 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_2.sch
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Rbreak-X        
+           R    1            
+         TC1 -800.000000E-06 
+
+
+**** 05/20/112 19:17:49 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_2.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE IS SWEPT
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    4.5484                   ($N_0002)   10.0000                       
+
+($N_0003)   10.0000                   ($N_0004)    4.6215                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -4.890E-03
+    V_V2        -4.956E-03
+
+    TOTAL POWER DISSIPATION   9.85E-02  WATTS
+
+
+**** 05/20/112 19:17:49 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_2.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE IS SWEPT
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D2        D_D1      
+MODEL        D1N750      D1N750    
+ID          -1.96E-03   -4.89E-03 
+VD          -4.55E+00   -4.62E+00 
+REQ          5.60E+01    1.26E+01 
+CAP          5.95E-11    5.91E-11 
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .14
+

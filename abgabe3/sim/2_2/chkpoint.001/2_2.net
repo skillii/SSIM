@@ -1,0 +1,9 @@
+* Schematics Netlist *
+
+
+
+V_V1         $N_0001 0 DC 0V AC 1V 
+R_R1         $N_0001 $N_0002 Rbreak-X {Rval}
+C_C1         $N_0002 $N_0003 Cbreak-X 22n 
+R_R2         $N_0003 0 Rbreak-X1 {Rval}
+C_C2         $N_0003 0 Cbreak-X1 22n 

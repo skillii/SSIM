@@ -1,0 +1,2 @@
+.model Rbreak-X RES R=1 DEV=1% TC1=-2e-4 
+*$

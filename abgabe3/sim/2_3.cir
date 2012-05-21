@@ -1,0 +1,27 @@
+* C:\MSimEv_8\Projects\ue3\2_3.sch
+
+* Schematics Version 8.0 - July 1997
+* Sun May 20 21:35:54 2012
+
+
+.PARAM         Rval=72 
+
+** Analysis setup **
+.ac DEC 1000 10000 1000000
+.MC 3 AC V([$N_0001]) YMAX
++  OUTPUT ALL
+.TEMP -25 27 100
+.LIB "C:\MSimEv_8\Projects\ue3\2_1.lib"
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "2_3.net"
+.INC "2_3.als"
+
+
+.probe
+
+
+.END

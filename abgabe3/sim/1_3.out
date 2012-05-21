@@ -1,0 +1,489 @@
+
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 8.0 - July 1997
+* Mon May 21 13:07:42 2012
+
+
+.PARAM         Rval=1.1152k 
+
+** Analysis setup **
+.DC LIN I_I1 2m 4m 0.1m 
+.STEP LIN V_V2 7 13 1 
+.TEMP 27
+.OP 
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "1_3.net"
+
+**** INCLUDING 1_3.net ****
+* Schematics Netlist *
+
+
+
+D_D2         0 $N_0001 D1N750 
+I_I1         $N_0001 0 DC 3mA  
+V_V2         $N_0002 0 DC 10V  
+R_R2         $N_0002 $N_0001  {Rval}  
+
+**** RESUMING 1_3.cir ****
+.INC "1_3.als"
+
+
+
+**** INCLUDING 1_3.als ****
+* Schematics Aliases *
+
+.ALIASES
+D_D2            D2(1=0 2=$N_0001 )
+I_I1            I1(+=$N_0001 -=0 )
+V_V2            V2(+=$N_0002 -=0 )
+R_R2            R2(1=$N_0002 2=$N_0001 )
+.ENDALIASES
+
+
+**** RESUMING 1_3.cir ****
+.probe
+
+
+.END
+
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N750          
+          IS  880.500000E-18 
+         ISR    1.859000E-09 
+          BV    4.7          
+         IBV     .020245     
+         NBV    1.6989       
+        IBVL    1.955600E-03 
+        NBVL   14.976        
+          RS     .25         
+         CJO  175.000000E-12 
+          VJ     .75         
+           M     .5516       
+        TBV1  -21.277000E-06 
+
+
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     V_V2 =    7     
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    3.5441                   ($N_0002)    7.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -3.099E-03
+
+    TOTAL POWER DISSIPATION   2.17E-02  WATTS
+
+
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     V_V2 =    7     
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D2      
+MODEL        D1N750    
+ID          -9.89E-05 
+VD          -3.54E+00 
+REQ          3.92E+03 
+CAP          6.68E-11 
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     V_V2 =    8     
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    4.1403                   ($N_0002)    8.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -3.461E-03
+
+    TOTAL POWER DISSIPATION   2.77E-02  WATTS
+
+
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     V_V2 =    8     
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D2      
+MODEL        D1N750    
+ID          -4.61E-04 
+VD          -4.14E+00 
+REQ          8.39E+02 
+CAP          6.22E-11 
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     V_V2 =    9     
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    4.4474                   ($N_0002)    9.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -4.082E-03
+
+    TOTAL POWER DISSIPATION   3.67E-02  WATTS
+
+
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     V_V2 =    9     
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D2      
+MODEL        D1N750    
+ID          -1.08E-03 
+VD          -4.45E+00 
+REQ          2.45E+02 
+CAP          6.02E-11 
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     V_V2 =   10    
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    4.5447                   ($N_0002)   10.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -4.892E-03
+
+    TOTAL POWER DISSIPATION   4.89E-02  WATTS
+
+
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     V_V2 =   10    
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D2      
+MODEL        D1N750    
+ID          -1.89E-03 
+VD          -4.54E+00 
+REQ          6.00E+01 
+CAP          5.95E-11 
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     V_V2 =   11    
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    4.5808                   ($N_0002)   11.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -5.756E-03
+
+    TOTAL POWER DISSIPATION   6.33E-02  WATTS
+
+
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     V_V2 =   11    
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D2      
+MODEL        D1N750    
+ID          -2.76E-03 
+VD          -4.58E+00 
+REQ          2.96E+01 
+CAP          5.93E-11 
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     V_V2 =   12    
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    4.6018                   ($N_0002)   12.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -6.634E-03
+
+    TOTAL POWER DISSIPATION   7.96E-02  WATTS
+
+
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     V_V2 =   12    
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D2      
+MODEL        D1N750    
+ID          -3.63E-03 
+VD          -4.60E+00 
+REQ          1.92E+01 
+CAP          5.92E-11 
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     V_V2 =   13    
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)    4.6164                   ($N_0002)   13.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -7.518E-03
+
+    TOTAL POWER DISSIPATION   9.77E-02  WATTS
+
+
+**** 05/21/112 13:07:43 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue3\1_3.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     V_V2 =   13    
+
+
+******************************************************************************
+
+
+
+
+
+
+**** DIODES
+
+
+NAME         D_D2      
+MODEL        D1N750    
+ID          -4.52E-03 
+VD          -4.62E+00 
+REQ          1.41E+01 
+CAP          5.91E-11 
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .03
+

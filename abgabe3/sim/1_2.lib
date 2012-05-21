@@ -1,0 +1,2 @@
+.model Rbreak-X RES R=1 TC1=-0.8e-3 
+*$

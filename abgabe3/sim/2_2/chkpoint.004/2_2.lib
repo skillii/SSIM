@@ -1,0 +1,8 @@
+.model Rbreak-X1 RES R=1 DEV=1% LOT=1% TC1=-2e-4 
+*$
+.model Cbreak-X1 CAP C=1 DEV=15% LOT=15% TC1=-3e-4 
+*$
+.model Rbreak-X RES R=1 DEV=1% LOT=1% TC1=-2e-4 
+*$
+.model Cbreak-X CAP C=1 DEV=15% LOT=15% TC1=-3e-4 
+*$
