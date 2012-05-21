@@ -1,0 +1,28 @@
+* Y:\SSIM\UE\repo\abgabe3\sim\4.sch
+
+* Schematics Version 8.0 - July 1997
+* Mon May 21 20:45:32 2012
+
+
+
+** Analysis setup **
+.DC LIN V_V2 0V 5V 0.02V 
+.OP 
+.LIB "Y:\SSIM\UE\repo\abgabe3\sim\4.lib"
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib "nom.lib"
+.lib "C:\MSimEv_8\UserLib\SIEMENS.LIB"
+.lib "C:\MSimEv_8\UserLib\NAT_SEMI.LIB"
+.lib "C:\MSimEv_8\UserLib\mos_int.lib"
+.lib "C:\MSimEv_8\UserLib\LIN_TECH.LIB"
+
+.INC "4.net"
+.INC "4.als"
+
+
+.probe
+
+
+.END

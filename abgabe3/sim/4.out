@@ -1,0 +1,216 @@
+
+**** 05/21/112 20:45:34 ******** NT Evaluation PSpice (July 1997) ************
+
+ * Y:\SSIM\UE\repo\abgabe3\sim\4.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 8.0 - July 1997
+* Mon May 21 20:45:32 2012
+
+
+
+** Analysis setup **
+.DC LIN V_V2 0V 5V 0.02V 
+.OP 
+.LIB "Y:\SSIM\UE\repo\abgabe3\sim\4.lib"
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib "nom.lib"
+.lib "C:\MSimEv_8\UserLib\SIEMENS.LIB"
+.lib "C:\MSimEv_8\UserLib\NAT_SEMI.LIB"
+.lib "C:\MSimEv_8\UserLib\mos_int.lib"
+.lib "C:\MSimEv_8\UserLib\LIN_TECH.LIB"
+
+.INC "4.net"
+
+**** INCLUDING 4.net ****
+* Schematics Netlist *
+
+
+
+M_M3         $N_0003 $N_0002 $N_0001 0 nmos2  
++ L=3um  
++ W=50um         
+M_M4         $N_0001 0 $N_0003 $N_0002 PMOS2  
++ L=3um  
++ W=50um         
+V_V3         $N_0002 0 5V
+R_R1         $N_0004 0  100  
+R_R2         $N_0001 0  100  
+V_V2         $N_0003 0 4
+V_V1         $N_0005 0 5V
+M_M2         $N_0003 0 $N_0004 $N_0005 PMOS  
++ L=3um  
++ W=50um         
+M_M1         $N_0003 $N_0005 $N_0004 0 nmos  
++ L=3um  
++ W=50um         
+
+**** RESUMING 4.cir ****
+.INC "4.als"
+
+
+
+**** INCLUDING 4.als ****
+* Schematics Aliases *
+
+.ALIASES
+M_M3            M3(d=$N_0003 g=$N_0002 s=$N_0001 b=0 )
+M_M4            M4(d=$N_0001 g=0 s=$N_0003 b=$N_0002 )
+V_V3            V3(+=$N_0002 -=0 )
+R_R1            R1(1=$N_0004 2=0 )
+R_R2            R2(1=$N_0001 2=0 )
+V_V2            V2(+=$N_0003 -=0 )
+V_V1            V1(+=$N_0005 -=0 )
+M_M2            M2(d=$N_0003 g=0 s=$N_0004 b=$N_0005 )
+M_M1            M1(d=$N_0003 g=$N_0005 s=$N_0004 b=0 )
+.ENDALIASES
+
+
+**** RESUMING 4.cir ****
+.probe
+
+
+.END
+
+**** 05/21/112 20:45:34 ******** NT Evaluation PSpice (July 1997) ************
+
+ * Y:\SSIM\UE\repo\abgabe3\sim\4.sch
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               PMOS            nmos2           PMOS2           nmos            
+               PMOS            NMOS            PMOS            NMOS            
+       LEVEL    1               2               2               1            
+           L  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+          WD                  400.000000E-09  400.000000E-09                 
+         VTO   -1                .73            -.75            1            
+          KP   12.000000E-06   69.062870E-06   23.481380E-06   30.000000E-06 
+       GAMMA     .5              .722481         .559631         .5          
+         PHI     .6              .752263         .725839         .6          
+      LAMBDA     .033                                            .02         
+         RSH   50              25              45              25            
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS   20.000000E-06   10.000000E-06   20.000000E-06   10.000000E-06 
+          PB     .8              .9              .9              .8          
+        PBSW     .8              .9              .9              .8          
+          CJ  200.000000E-06  360.000000E-06  340.000000E-06  200.000000E-06 
+        CJSW    0             250.000000E-12  220.000000E-12    0            
+          MJ                     .4                                          
+        MJSW                     .2              .2                          
+        CGSO  500.000000E-12  300.000000E-12  300.000000E-12  500.000000E-12 
+        CGDO  500.000000E-12  300.000000E-12  300.000000E-12  500.000000E-12 
+        CGBO                  150.000000E-12  150.000000E-12                 
+        NSUB                   30.000000E+15   18.000000E+15                 
+         NFS                  500.000000E+09    1.300000E+12                 
+         TOX   57.500000E-09   25.000000E-09   25.000000E-09   57.500000E-09 
+          XJ    0             180.000000E-09   60.000000E-09    0            
+          UO  200             500             170             500            
+       UCRIT                  300.000000E+03  200.000000E+03                 
+        UEXP                     .25             .25                         
+        VMAX                   70.000000E+03   50.000000E+03                 
+        NEFF                    5               3                            
+       DELTA                     .3              .8                          
+          KF                   10.000000E-27  500.000000E-30                 
+          AF                    1.3             1.3                          
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    0               0               0               0            
+       XPART    0               0               0               0            
+
+
+**** 05/21/112 20:45:34 ******** NT Evaluation PSpice (July 1997) ************
+
+ * Y:\SSIM\UE\repo\abgabe3\sim\4.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+($N_0001)     .5845                   ($N_0002)    5.0000                       
+
+($N_0003)    4.0000                   ($N_0004)     .3911                       
+
+($N_0005)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V3        -5.435E-12
+    V_V2        -9.756E-03
+    V_V1        -5.629E-12
+
+    TOTAL POWER DISSIPATION   3.90E-02  WATTS
+
+
+**** 05/21/112 20:45:34 ******** NT Evaluation PSpice (July 1997) ************
+
+ * Y:\SSIM\UE\repo\abgabe3\sim\4.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** MOSFETS
+
+
+NAME         M_M3        M_M4        M_M2        M_M1      
+MODEL        nmos2       PMOS2       PMOS        nmos      
+ID           4.58E-03   -1.27E-03    8.17E-04    3.09E-03 
+VGS          4.42E+00   -4.00E+00   -3.91E-01    4.61E+00 
+VDS          3.42E+00   -3.42E+00    3.61E+00    3.61E+00 
+VBS         -5.85E-01    1.00E+00    4.61E+00   -3.91E-01 
+VTH          9.60E-01   -1.05E+00   -1.25E+00    1.13E+00 
+VDSAT        2.02E+00   -2.25E+00   -2.71E+00    3.40E+00 
+GM           2.17E-03    7.18E-04    6.04E-04    1.82E-03 
+GDS          7.53E-05    3.38E-05    2.42E-05    5.79E-05 
+GMB          4.02E-04    1.02E-04    1.18E-04    4.40E-04 
+CBD          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CBS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CGSOV        1.48E-14    1.48E-14    2.50E-14    2.50E-14 
+CGDOV        1.48E-14    1.48E-14    2.50E-14    2.50E-14 
+CGBOV        4.50E-16    4.50E-16    0.00E+00    0.00E+00 
+CGS          1.30E-13    1.36E-13    0.00E+00    6.01E-14 
+CGD          1.72E-14    0.00E+00    6.01E-14    0.00E+00 
+CGB          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .73
+

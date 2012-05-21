@@ -1,0 +1,27 @@
+* Y:\SSIM\UE\repo\abgabe3\sim\3.sch
+
+* Schematics Version 8.0 - July 1997
+* Mon May 21 15:43:17 2012
+
+
+
+** Analysis setup **
+.ac LIN 1001 100k 10000k
+.OP 
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib "nom.lib"
+.lib "C:\MSimEv_8\UserLib\SIEMENS.LIB"
+.lib "C:\MSimEv_8\UserLib\NAT_SEMI.LIB"
+.lib "C:\MSimEv_8\UserLib\mos_int.lib"
+.lib "C:\MSimEv_8\UserLib\LIN_TECH.LIB"
+
+.INC "3.net"
+.INC "3.als"
+
+
+.probe
+
+
+.END
