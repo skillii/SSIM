@@ -47,7 +47,7 @@ Zur Ermittlung des differentiellen Ausgangswiderstands ($r_a = \frac{du_a}{di_a}
 	\centering
 	\includegraphics[width=\textwidth]{fig/bsp1/3_1_3_radetail.PNG}
 	\caption{Verlauf des differentiellen Ausgangswiderstands um den Arbeitspunkt}
-	\label{fig:3_1_3_ra}
+	\label{fig:3_1_3_radetail}
 \end{figure}
 
 
@@ -56,7 +56,7 @@ Zur Ermittlung des differentiellen Ausgangswiderstands ($r_a = \frac{du_a}{di_a}
 
 \subsection{Ermittlung von R}
 
-Zur Ermittlung von R wurde ein AC Sweep erstellt, der die Ausgangsspannung f"ur eine Frequenz (die Mittenfrequenz von 100kHz) simuliert. Zus"atzlich wurde mit einem Parametric Sweep R variiert. Der Spitzenwert entspricht dabei dem Widerstand, bei dem die Amplitude bei der Mittenfrequenz von 100kHz am h"ochsten ist. Abbildung~\ref{fig:3_2_1_rgrob} zeigt den Verlauf f"ur unterschiedliche R. Man erkennt, dass die Spitze zwischen $50\Omega$ und 100$\Omega$ liegt. Abbildung~\ref{3_2_1_rdetail} zeigt diesen Ausschnitt im Detail. Mit einem Cursor wurde der Maximalwert bei $72\Omega$ bestimmt. Dieser Wert stimmt mit dem errechneten Wert "uberein ($f_g = \frac{1}{2 \pi R C}$), und auch die Amplitude stimmt mit der Theorie "uberein ($\frac{V_{in}}{3}$).
+Zur Ermittlung von R wurde ein AC Sweep erstellt, der die Ausgangsspannung f"ur eine Frequenz (die Mittenfrequenz von 100kHz) simuliert. Zus"atzlich wurde mit einem Parametric Sweep R variiert. Der Spitzenwert entspricht dabei dem Widerstand, bei dem die Amplitude bei der Mittenfrequenz von 100kHz am h"ochsten ist. Abbildung~\ref{fig:3_2_1_rgrob} zeigt den Verlauf f"ur unterschiedliche R. Man erkennt, dass die Spitze zwischen $50\Omega$ und 100$\Omega$ liegt. Abbildung~\ref{fig:3_2_1_rdetail} zeigt diesen Ausschnitt im Detail. Mit einem Cursor wurde der Maximalwert bei $72\Omega$ bestimmt. Dieser Wert stimmt mit dem errechneten Wert "uberein ($f_g = \frac{1}{2 \pi R C}$), und auch die Amplitude stimmt mit der Theorie "uberein ($\frac{V_{in}}{3}$).
 
 \begin{figure}%[h!]
 	\centering
@@ -84,7 +84,7 @@ Zum "Uberpr"ufen wurde der Frequenzgang des Bandpasses f"ur die nominelle Temper
 
 \subsection{Worst Case Analyse}
 
-Mit der Worst Case Analyse lassen sich die obere und untere Grenze f"ur die Ausgangswerte ermitteln, indem die schlechteste Kombination der toleranzbehafteten Bauteilwerte eingesetzt wird. Abbildung~\ref{3_2_2_wc_fT_both} zeigt die Simulation des nominalen Verhaltens (Mitte) und der Worst Cases (Minimum und Maximum) wieder bei den 3 Werten f"ur die Temperatur. Die Cursor markieren jeweils die entstehenden Mittenfrequenzen.
+Mit der Worst Case Analyse lassen sich die obere und untere Grenze f"ur die Ausgangswerte ermitteln, indem die schlechteste Kombination der toleranzbehafteten Bauteilwerte eingesetzt wird. Abbildung~\ref{fig:3_2_2_wc_fT_both} zeigt die Simulation des nominalen Verhaltens (Mitte) und der Worst Cases (Minimum und Maximum) wieder bei den 3 Werten f"ur die Temperatur. Die Cursor markieren jeweils die entstehenden Mittenfrequenzen.
 
 \begin{figure}%[h!]
 	\centering
