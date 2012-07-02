@@ -1,0 +1,18 @@
+* Y:\SSIM\UE\repo\abgabe4\sim\2.stl written on Thu Jun 28 15:34:13 2012
+* by Stimulus Editor -- Evaluation Version 8.0
+;!Stimulus Get
+;! myclk Digital
+;!Ok
+;!Plot Axis_Settings
+;!Xrange 0s 4ms
+;!AutoUniverse
+;!XminRes 1ns
+;!YminRes 1n
+;!Ok
+.STIMULUS myclk STIM (1, 1) ;! CLOCK 1000 0.5 0 0
++   +0s 0
++   +500us 1
++   Repeat Forever
++      +500us 0
++      +500us 1
++   EndRepeat

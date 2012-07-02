@@ -1,14 +1,18 @@
-* Y:\SSIM\UE\repo\abgabe3\sim\4.sch
+* Y:\SSIM\UE\REPO\ABGABE4\SIM\2.sch
 
 * Schematics Version 8.0 - July 1997
-* Tue May 22 09:35:48 2012
+* Sat Jun 30 00:01:53 2012
 
 
 
 ** Analysis setup **
-.DC LIN V_V2 0V 5V 0.02V 
-.OP 
-.LIB "Y:\SSIM\UE\repo\abgabe3\sim\4.lib"
+.tran 10ns 1us
+.OPTIONS DIGINITSTATE=2
+.OPTIONS DIGIOLVL=4
+.OPTIONS DIGMNTYMX=3
+.OPTIONS DIGERRDEFAULT=100
+.OPTIONS DIGERRLIMIT=100
+.STMLIB "2.stl"
 
 
 * From [SCHEMATICS NETLIST] section of msim.ini:
@@ -18,8 +22,8 @@
 .lib "C:\MSimEv_8\UserLib\mos_int.lib"
 .lib "C:\MSimEv_8\UserLib\LIN_TECH.LIB"
 
-.INC "4.net"
-.INC "4.als"
+.INC "2.net"
+.INC "2.als"
 
 
 .probe

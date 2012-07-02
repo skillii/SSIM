@@ -1,4 +1,4 @@
-*version 8.0 1042310562
+*version 8.0 213013151
 u 231
 M? 7
 V? 5
@@ -39,8 +39,8 @@ AutoGenStim4ExtIFPorts 1
 @index
 pageloc 1 0 5213 
 @status
-n 0 112:04:21:20:45:32;1337625932 e 
-s 2832 112:04:21:20:45:33;1337625933 e 
+n 0 112:04:22:09:35:48;1337672148 e 
+s 2832 112:04:22:09:35:48;1337672148 e 
 *page 1 0 970 720 iA
 @ports
 port 66 GND_ANALOG 270 90 h
@@ -65,13 +65,6 @@ a 1 u 13 0 39 18 hcn 100 DC=5V
 a 0 sp 0 0 22 37 hln 100 PART=VDC
 a 0 a 0:13 0 0 0 hln 100 PKGREF=V3
 a 1 ap 9 0 24 7 hcn 100 REFDES=V3
-part 80 r 300 200 d
-a 0 u 13 0 30 0 hln 100 VALUE=100
-a 0 sp 0 0 0 10 hlb 100 PART=r
-a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
-a 0 s 0:13 0 0 0 hln 100 GATE=
-a 0 a 0:13 0 0 0 hln 100 PKGREF=R1
-a 0 ap 9 0 15 0 hln 100 REFDES=R1
 part 118 r 620 190 d
 a 0 u 13 0 30 -5 hln 100 VALUE=100
 a 0 sp 0 0 0 10 hlb 100 PART=r
@@ -101,6 +94,13 @@ a 0 x 0:13 0 0 0 hln 100 PKGREF=M1
 a 0 xp 9 0 5 10 hln 100 REFDES=M1
 a 0 u 0 0 0 0 hln 100 W=50um
 a 0 u 0 0 0 0 hln 100 L=3um
+part 80 r 300 200 d
+a 0 sp 0 0 0 10 hlb 100 PART=r
+a 0 s 0:13 0 0 0 hln 100 PKGTYPE=RC05
+a 0 s 0:13 0 0 0 hln 100 GATE=
+a 0 a 0:13 0 0 0 hln 100 PKGREF=R1
+a 0 ap 9 0 15 0 hln 100 REFDES=R1
+a 0 u 13 0 30 0 hln 100 VALUE=100
 part 1 titleblk 970 720 h
 a 1 s 13 0 350 10 hcn 100 PAGESIZE=A
 a 1 s 13 0 180 60 hcn 100 PAGETITLE=
@@ -237,12 +237,6 @@ j 620 230
 j 620 190
 + p 118 1
 + w 143
-j 240 150
-+ p 227 b
-+ w 28
-j 200 160
-+ p 230 pin1
-+ p 227 d
 j 220 240
 + s 6
 + w 28
@@ -258,21 +252,6 @@ j 300 240
 j 350 230
 + p 4 -
 + w 28
-j 210 120
-+ p 228 d
-+ w 59
-j 250 120
-+ p 228 s
-+ w 82
-j 250 130
-+ p 228 b
-+ w 221
-j 230 90
-+ p 228 g
-+ w 68
-j 210 120
-+ p 229 pin1
-+ p 228 d
 j 80 150
 + p 5 +
 + w 59
@@ -291,9 +270,6 @@ j 510 130
 j 530 110
 + p 120 s
 + w 59
-j 200 160
-+ p 227 d
-+ w 59
 j 210 120
 + p 229 pin1
 + w 59
@@ -306,18 +282,42 @@ j 270 90
 j 350 190
 + p 4 +
 + w 221
-j 220 190
-+ p 227 g
-+ w 221
 j 270 140
 + w 82
 + w 82
 j 300 200
 + p 80 1
 + w 82
+j 210 120
++ p 228 d
++ w 59
+j 250 120
++ p 228 s
++ w 82
+j 250 130
++ p 228 b
++ w 221
+j 230 90
++ p 228 g
++ w 68
+j 210 120
++ p 229 pin1
++ p 228 d
 j 240 160
 + p 227 s
 + w 82
+j 200 160
++ p 227 d
++ w 59
+j 220 190
++ p 227 g
++ w 221
+j 240 150
++ p 227 b
++ w 28
+j 200 160
++ p 230 pin1
++ p 227 d
 @attributes
 a 0 s 0:13 0 0 0 hln 100 PAGETITLE=
 a 0 s 0:13 0 0 0 hln 100 PAGENO=1

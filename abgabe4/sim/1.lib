@@ -1,0 +1,38 @@
+*-------------------------------------------------------------------------------
+* library of linear ic definitions
+
+* this is a reduced version of microsim's linear subcircuit library.
+* you are welcome to make as many copies of it as you find convenient.
+*
+* the parameters in the opamp library were derived from the data sheets for
+* each part.  the macromodel used is similar to the one described in:
+*
+*	macromodeling of integrated circuit operational amplifiers
+*	  by graeme boyle, barry cohn, donald pederson, and james solomon
+*	ieee journal of solie-state circuits, vol. sc-9, no. 6,	dec. 1974
+*
+* differences from the reference (above) occur in the output limiting stage
+* which was modified to reduce internally generated currents associated with
+* output voltage limiting, as well as short-circuit current limiting.
+*
+* the opamps are modelled at room temperature and do not track changes with
+* temperature.  this library file contains models for nominal, not worst case,
+* devices.
+*
+*$
+*-----------------------------------------------------------------------------
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt MyTestOP    1 2 3 4 5
+*
+
+EFREQ 10 4 LAPLACE {V(1)-V(2)} {199526.2/(1+s/156.26) * 1/(1+s/(31963k))}
+
+EOUT 5 4 VALUE = { V(10)+V(4) }
+
+.ends
+*$

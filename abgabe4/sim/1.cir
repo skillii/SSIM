@@ -1,14 +1,15 @@
-* Y:\SSIM\UE\repo\abgabe3\sim\4.sch
+* Y:\SSIM\UE\REPO\ABGABE4\SIM\1.sch
 
 * Schematics Version 8.0 - July 1997
-* Tue May 22 09:35:48 2012
+* Thu Jun 28 12:47:19 2012
 
 
+.PARAM         BLA=10 
 
 ** Analysis setup **
-.DC LIN V_V2 0V 5V 0.02V 
+.ac DEC 101 1 100000k
 .OP 
-.LIB "Y:\SSIM\UE\repo\abgabe3\sim\4.lib"
+.LIB "Y:\SSIM\UE\REPO\ABGABE4\SIM\1.lib"
 
 
 * From [SCHEMATICS NETLIST] section of msim.ini:
@@ -18,8 +19,8 @@
 .lib "C:\MSimEv_8\UserLib\mos_int.lib"
 .lib "C:\MSimEv_8\UserLib\LIN_TECH.LIB"
 
-.INC "4.net"
-.INC "4.als"
+.INC "1.net"
+.INC "1.als"
 
 
 .probe

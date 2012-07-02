@@ -1,5 +1,5 @@
 
-**** 05/21/112 20:45:34 ******** NT Evaluation PSpice (July 1997) ************
+**** 05/22/112 09:35:49 ******** NT Evaluation PSpice (July 1997) ************
 
  * Y:\SSIM\UE\repo\abgabe3\sim\4.sch
 
@@ -13,7 +13,7 @@
 
 
 * Schematics Version 8.0 - July 1997
-* Mon May 21 20:45:32 2012
+* Tue May 22 09:35:48 2012
 
 
 
@@ -44,16 +44,16 @@ M_M4         $N_0001 0 $N_0003 $N_0002 PMOS2
 + L=3um  
 + W=50um         
 V_V3         $N_0002 0 5V
-R_R1         $N_0004 0  100  
 R_R2         $N_0001 0  100  
 V_V2         $N_0003 0 4
-V_V1         $N_0005 0 5V
-M_M2         $N_0003 0 $N_0004 $N_0005 PMOS  
+V_V1         $N_0004 0 5V
+M_M2         $N_0003 0 $N_0005 $N_0004 PMOS  
 + L=3um  
 + W=50um         
-M_M1         $N_0003 $N_0005 $N_0004 0 nmos  
+M_M1         $N_0003 $N_0004 $N_0005 0 nmos  
 + L=3um  
 + W=50um         
+R_R1         $N_0005 0  100  
 
 **** RESUMING 4.cir ****
 .INC "4.als"
@@ -67,12 +67,12 @@ M_M1         $N_0003 $N_0005 $N_0004 0 nmos
 M_M3            M3(d=$N_0003 g=$N_0002 s=$N_0001 b=0 )
 M_M4            M4(d=$N_0001 g=0 s=$N_0003 b=$N_0002 )
 V_V3            V3(+=$N_0002 -=0 )
-R_R1            R1(1=$N_0004 2=0 )
 R_R2            R2(1=$N_0001 2=0 )
 V_V2            V2(+=$N_0003 -=0 )
-V_V1            V1(+=$N_0005 -=0 )
-M_M2            M2(d=$N_0003 g=0 s=$N_0004 b=$N_0005 )
-M_M1            M1(d=$N_0003 g=$N_0005 s=$N_0004 b=0 )
+V_V1            V1(+=$N_0004 -=0 )
+M_M2            M2(d=$N_0003 g=0 s=$N_0005 b=$N_0004 )
+M_M1            M1(d=$N_0003 g=$N_0004 s=$N_0005 b=0 )
+R_R1            R1(1=$N_0005 2=0 )
 .ENDALIASES
 
 
@@ -82,7 +82,7 @@ M_M1            M1(d=$N_0003 g=$N_0005 s=$N_0004 b=0 )
 
 .END
 
-**** 05/21/112 20:45:34 ******** NT Evaluation PSpice (July 1997) ************
+**** 05/22/112 09:35:49 ******** NT Evaluation PSpice (July 1997) ************
 
  * Y:\SSIM\UE\repo\abgabe3\sim\4.sch
 
@@ -138,7 +138,7 @@ M_M1            M1(d=$N_0003 g=$N_0005 s=$N_0004 b=0 )
        XPART    0               0               0               0            
 
 
-**** 05/21/112 20:45:34 ******** NT Evaluation PSpice (July 1997) ************
+**** 05/22/112 09:35:49 ******** NT Evaluation PSpice (July 1997) ************
 
  * Y:\SSIM\UE\repo\abgabe3\sim\4.sch
 
@@ -155,9 +155,9 @@ M_M1            M1(d=$N_0003 g=$N_0005 s=$N_0004 b=0 )
 
 ($N_0001)     .5845                   ($N_0002)    5.0000                       
 
-($N_0003)    4.0000                   ($N_0004)     .3911                       
+($N_0003)    4.0000                   ($N_0004)    5.0000                       
 
-($N_0005)    5.0000                   
+($N_0005)     .3911                   
 
 
 
@@ -172,7 +172,7 @@ M_M1            M1(d=$N_0003 g=$N_0005 s=$N_0004 b=0 )
     TOTAL POWER DISSIPATION   3.90E-02  WATTS
 
 
-**** 05/21/112 20:45:34 ******** NT Evaluation PSpice (July 1997) ************
+**** 05/22/112 09:35:49 ******** NT Evaluation PSpice (July 1997) ************
 
  * Y:\SSIM\UE\repo\abgabe3\sim\4.sch
 
@@ -212,5 +212,5 @@ CGB          0.00E+00    0.00E+00    0.00E+00    0.00E+00
 
           JOB CONCLUDED
 
-          TOTAL JOB TIME             .73
+          TOTAL JOB TIME             .96
 
