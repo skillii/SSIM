@@ -1,0 +1,230 @@
+
+**** 07/02/112 21:50:10 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_4.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 8.0 - July 1997
+* Mon Jul 02 21:50:10 2012
+
+
+
+** Analysis setup **
+.tran 1us 10ms
+.OPTIONS DIGINITSTATE=0
+.OP 
+.LIB "C:\MSimEv_8\Projects\ue4\4_4.lib"
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "4_4.net"
+
+**** INCLUDING 4_4.net ****
+* Schematics Netlist *
+
+
+
+V_V1         +12V 0 12V
+V_V2         0 -12V 12V
+R_R10         $N_0001 0  1k  
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND $N_0002 IO_STM IO_LEVEL=0 
++ 0 0
++ +50uS 1
++REPEAT FOREVER
++ +50uS 0
++  +50uS 1
++ ENDREPEAT
+R_R18         0 $N_0003  2k  
+R_R17         $N_0003 $N_0004  1k  
+R_R16         $N_0004 $N_0005  1k  
+R_R15         $N_0005 $N_0006  1k  
+R_R2         $N_0007 $N_0003  2k  
+R_R3         $N_0008 $N_0004  2k  
+R_R4         $N_0009 $N_0005  2k  
+X_U2         $N_0002 $D_HI $D_HI $D_HI $D_HI $D_HI $D_HI $D_HI $D_HI $N_0007
++  $N_0008 $N_0009 $N_0018 $N_0019 $G_DPWR $G_DGND 74161 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+R_R5         $N_0018 $N_0006  2k  
+R_R14         $N_0020 0  1k  
+R_R13         $N_0021 $N_0020  2k  
+X_U1         $N_0006 $N_0020 +12V -12V $N_0021 uA741
+X_U2A         $N_0021 $N_0024 +12V 0 $N_0001 LM324
+R_R20         $N_0026 $N_0025  1k  
+R_R19         +12V $N_0026  1k  
+V_V3         $N_0027 0 0.6V
+R_R21         $N_0025 $N_0024  100k  
+X_U11         $N_0025 $N_0027 +12V -12V $N_0024 uA741
+D_D2         $N_0026 0 D1N4002 
+
+**** RESUMING 4_4.cir ****
+.INC "4_4.als"
+
+
+
+**** INCLUDING 4_4.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_V1            V1(+=+12V -=0 )
+V_V2            V2(+=0 -=-12V )
+R_R10           R10(1=$N_0001 2=0 )
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND 1=$N_0002 )
+R_R18           R18(1=0 2=$N_0003 )
+R_R17           R17(1=$N_0003 2=$N_0004 )
+R_R16           R16(1=$N_0004 2=$N_0005 )
+R_R15           R15(1=$N_0005 2=$N_0006 )
+R_R2            R2(1=$N_0007 2=$N_0003 )
+R_R3            R3(1=$N_0008 2=$N_0004 )
+R_R4            R4(1=$N_0009 2=$N_0005 )
+X_U2            U2(CLK=$N_0002 ENP=$D_HI ENT=$D_HI CLRbar=$D_HI LOADbar=$D_HI
++  A=$D_HI B=$D_HI C=$D_HI D=$D_HI QA=$N_0007 QB=$N_0008 QC=$N_0009 QD=$N_0018
++  RCO=$N_0019 PWR=$G_DPWR GND=$G_DGND )
+R_R5            R5(1=$N_0018 2=$N_0006 )
+R_R14           R14(1=$N_0020 2=0 )
+R_R13           R13(1=$N_0021 2=$N_0020 )
+X_U1            U1(+=$N_0006 -=$N_0020 V+=+12V V-=-12V OUT=$N_0021 )
+X_U2A           U2A(+=$N_0021 -=$N_0024 V+=+12V V-=0 OUT=$N_0001 )
+R_R20           R20(1=$N_0026 2=$N_0025 )
+R_R19           R19(1=+12V 2=$N_0026 )
+V_V3            V3(+=$N_0027 -=0 )
+R_R21           R21(1=$N_0025 2=$N_0024 )
+X_U11           U11(+=$N_0025 -=$N_0027 V+=+12V V-=-12V OUT=$N_0024 )
+D_D2            D2(1=$N_0026 2=0 )
+_    _($G_DGND=$G_DGND)
+_    _($G_DPWR=$G_DPWR)
+_    _(+12V=+12V)
+_    _(-12V=-12V)
+.ENDALIASES
+
+
+**** RESUMING 4_4.cir ****
+.probe
+
+
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node $N_0009
+*
+* Moving X_U2.U161DLY:OUT4 from analog node $N_0009 to new digital node $N_0009$DtoA
+X$$N_0009_DtoA1
++ $N_0009$DtoA
++ $N_0009
++ $G_DPWR
++ $G_DGND
++ DtoA_STD
++       PARAMS: DRVH=  96.4   DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface for node $N_0018
+*
+* Moving X_U2.U161DLY:OUT5 from analog node $N_0018 to new digital node $N_0018$DtoA
+X$$N_0018_DtoA1
++ $N_0018$DtoA
++ $N_0018
++ $G_DPWR
++ $G_DGND
++ DtoA_STD
++       PARAMS: DRVH=  96.4   DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface for node $N_0007
+*
+* Moving X_U2.U161DLY:OUT2 from analog node $N_0007 to new digital node $N_0007$DtoA
+X$$N_0007_DtoA1
++ $N_0007$DtoA
++ $N_0007
++ $G_DPWR
++ $G_DGND
++ DtoA_STD
++       PARAMS: DRVH=  96.4   DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface for node $N_0008
+*
+* Moving X_U2.U161DLY:OUT3 from analog node $N_0008 to new digital node $N_0008$DtoA
+X$$N_0008_DtoA1
++ $N_0008$DtoA
++ $N_0008
++ $G_DPWR
++ $G_DGND
++ DtoA_STD
++       PARAMS: DRVH=  96.4   DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** EXPANSION OF SUBCIRCUIT X$$N_0009_DtoA1 ****
+
+ERROR -- EVALUATION VERSION analog Node Limit (64 Nodes) Exceeded!
+
+
+
+
+ABORTING SIMULATION
+**** 07/02/112 21:50:10 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_4.sch
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+
+  NUNODS  NCNODS  NUMNOD   NUMEL  DIODES    BJTS   JFETS   MFETS GASFETS   IGBTS
+
+      18      64      18     114      16       6       0       0       0       0
+
+NDIGITAL   NSTOP   NTTAR   NTTBR   NTTOV   IFILL    IOPS  PERSPA
+
+       5      18       0       0       0       0       0   0.000
+
+  NUMTTP  NUMRTP  NUMNIT   DIGTP  DIGEVT  DIGEVL      MEMUSE
+
+       0       0       0       0       0       0       82484
+
+                                 SECONDS      ITERATIONS
+
+
+          MATRIX SOLUTION           0.00               0
+
+          MATRIX LOAD               0.00
+
+          DIGITAL SIMULATION        0.00
+
+
+          READIN                     .02
+
+          SETUP                     0.00
+
+          DC SWEEP                  0.00               0
+
+          BIAS POINT                0.00               0
+
+          AC and NOISE              0.00               0
+
+          TRANSIENT ANALYSIS        0.00               0
+
+          OUTPUT                    0.00
+
+          OVERHEAD                   .27
+
+          TOTAL JOB TIME             .29
+

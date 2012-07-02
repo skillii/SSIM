@@ -1,0 +1,30 @@
+* Schematics Netlist *
+
+
+
+V_V1         +12V 0 12V
+V_V2         0 -12V 12V
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND $N_0001 IO_STM IO_LEVEL=0 
++ 0 0
++ +50uS 1
++REPEAT FOREVER
++ +50uS 0
++  +50uS 1
++ ENDREPEAT
+R_R18         0 $N_0002  2k  
+R_R17         $N_0002 $N_0003  1k  
+R_R16         $N_0003 $N_0004  1k  
+R_R15         $N_0004 $N_0005  1k  
+R_R2         $N_0006 $N_0002  2k  
+R_R3         $N_0007 $N_0003  2k  
+R_R4         $N_0008 $N_0004  2k  
+X_U2         $N_0001 $D_HI $D_HI $D_HI $D_HI $D_HI $D_HI $D_HI $D_HI $N_0006
++  $N_0007 $N_0008 $N_0017 $N_0018 $G_DPWR $G_DGND 74161 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+R_R5         $N_0017 $N_0005  2k  
+R_R14         $N_0019 0  1k  
+R_R13         $N_0020 $N_0019  2k  
+X_U1         $N_0005 $N_0019 +12V -12V $N_0020 uA741
+R_R10         $N_0023 0  1k  
+X_U2A         $N_0024 $N_0020 +12V 0 $N_0023 LM324
+V_V3         $N_0024 0 7V

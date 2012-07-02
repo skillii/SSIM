@@ -1,0 +1,25 @@
+* C:\MSimEv_8\Projects\ue4\4_3_counter.sch
+
+* Schematics Version 8.0 - July 1997
+* Mon Jul 02 20:30:02 2012
+
+
+
+** Analysis setup **
+.tran 20ns 20us SKIPBP
+.OPTIONS DIGINITSTATE=0
+.OPTIONS DIGMNTYMX=2
+.OP 
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "4_3_counter.net"
+.INC "4_3_counter.als"
+
+
+.probe
+
+
+.END

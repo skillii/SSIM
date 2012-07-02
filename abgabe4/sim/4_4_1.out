@@ -1,0 +1,659 @@
+
+**** 07/02/112 22:00:10 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_4_1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 8.0 - July 1997
+* Mon Jul 02 22:00:10 2012
+
+
+
+** Analysis setup **
+.tran 1us 10ms
+.OPTIONS DIGINITSTATE=0
+.OP 
+.LIB "C:\MSimEv_8\Projects\ue4\4_4.lib"
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "4_4_1.net"
+
+**** INCLUDING 4_4_1.net ****
+* Schematics Netlist *
+
+
+
+V_V1         +12V 0 12V
+V_V2         0 -12V 12V
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND $N_0001 IO_STM IO_LEVEL=0 
++ 0 0
++ +50uS 1
++REPEAT FOREVER
++ +50uS 0
++  +50uS 1
++ ENDREPEAT
+R_R18         0 $N_0002  2k  
+R_R17         $N_0002 $N_0003  1k  
+R_R16         $N_0003 $N_0004  1k  
+R_R15         $N_0004 $N_0005  1k  
+R_R2         $N_0006 $N_0002  2k  
+R_R3         $N_0007 $N_0003  2k  
+R_R4         $N_0008 $N_0004  2k  
+X_U2         $N_0001 $D_HI $D_HI $D_HI $D_HI $D_HI $D_HI $D_HI $D_HI $N_0006
++  $N_0007 $N_0008 $N_0017 $N_0018 $G_DPWR $G_DGND 74161 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+R_R5         $N_0017 $N_0005  2k  
+R_R14         $N_0019 0  1k  
+R_R13         $N_0020 $N_0019  2k  
+X_U1         $N_0005 $N_0019 +12V -12V $N_0020 uA741
+R_R10         $N_0023 0  1k  
+X_U2A         $N_0024 $N_0020 +12V 0 $N_0023 LM324
+V_V3         $N_0024 0 7V
+
+**** RESUMING 4_4_1.cir ****
+.INC "4_4_1.als"
+
+
+
+**** INCLUDING 4_4_1.als ****
+* Schematics Aliases *
+
+.ALIASES
+V_V1            V1(+=+12V -=0 )
+V_V2            V2(+=0 -=-12V )
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND 1=$N_0001 )
+R_R18           R18(1=0 2=$N_0002 )
+R_R17           R17(1=$N_0002 2=$N_0003 )
+R_R16           R16(1=$N_0003 2=$N_0004 )
+R_R15           R15(1=$N_0004 2=$N_0005 )
+R_R2            R2(1=$N_0006 2=$N_0002 )
+R_R3            R3(1=$N_0007 2=$N_0003 )
+R_R4            R4(1=$N_0008 2=$N_0004 )
+X_U2            U2(CLK=$N_0001 ENP=$D_HI ENT=$D_HI CLRbar=$D_HI LOADbar=$D_HI
++  A=$D_HI B=$D_HI C=$D_HI D=$D_HI QA=$N_0006 QB=$N_0007 QC=$N_0008 QD=$N_0017
++  RCO=$N_0018 PWR=$G_DPWR GND=$G_DGND )
+R_R5            R5(1=$N_0017 2=$N_0005 )
+R_R14           R14(1=$N_0019 2=0 )
+R_R13           R13(1=$N_0020 2=$N_0019 )
+X_U1            U1(+=$N_0005 -=$N_0019 V+=+12V V-=-12V OUT=$N_0020 )
+R_R10           R10(1=$N_0023 2=0 )
+X_U2A           U2A(+=$N_0024 -=$N_0020 V+=+12V V-=0 OUT=$N_0023 )
+V_V3            V3(+=$N_0024 -=0 )
+_    _($G_DGND=$G_DGND)
+_    _($G_DPWR=$G_DPWR)
+_    _(-12V=-12V)
+_    _(+12V=+12V)
+.ENDALIASES
+
+
+**** RESUMING 4_4_1.cir ****
+.probe
+
+
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node $N_0006
+*
+* Moving X_U2.U161DLY:OUT2 from analog node $N_0006 to new digital node $N_0006$DtoA
+X$$N_0006_DtoA1
++ $N_0006$DtoA
++ $N_0006
++ $G_DPWR
++ $G_DGND
++ DtoA_STD
++       PARAMS: DRVH=  96.4   DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface for node $N_0017
+*
+* Moving X_U2.U161DLY:OUT5 from analog node $N_0017 to new digital node $N_0017$DtoA
+X$$N_0017_DtoA1
++ $N_0017$DtoA
++ $N_0017
++ $G_DPWR
++ $G_DGND
++ DtoA_STD
++       PARAMS: DRVH=  96.4   DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface for node $N_0007
+*
+* Moving X_U2.U161DLY:OUT3 from analog node $N_0007 to new digital node $N_0007$DtoA
+X$$N_0007_DtoA1
++ $N_0007$DtoA
++ $N_0007
++ $G_DPWR
++ $G_DGND
++ DtoA_STD
++       PARAMS: DRVH=  96.4   DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface for node $N_0008
+*
+* Moving X_U2.U161DLY:OUT4 from analog node $N_0008 to new digital node $N_0008$DtoA
+X$$N_0008_DtoA1
++ $N_0008$DtoA
++ $N_0008
++ $G_DPWR
++ $G_DGND
++ DtoA_STD
++       PARAMS: DRVH=  96.4   DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+
+X$DIGIFPWR 0 DIGIFPWR
+
+**** 07/02/112 22:00:10 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_4_1.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.dx         X_U2A.dx        
+          IS  800.000000E-18  800.000000E-18 
+          RS    1               1            
+
+
+**** 07/02/112 22:00:10 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_4_1.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.qx         X_U2A.qx        
+               NPN             PNP             
+          IS  800.000000E-18  800.000000E-18 
+          BF   93.75          166.7          
+          NF    1               1            
+          BR    1               1            
+          NR    1               1            
+
+
+**** 07/02/112 22:00:10 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_4_1.sch
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DIN74           
+        FILE DSO_DTOA        
+      FORMAT    6            
+    TIMESTEP  100.000000E-12 
+      S0NAME 0               
+       S0TSW    3.500000E-09 
+       S0RLO    7.13         
+       S0RHI  389            
+      S1NAME 1               
+       S1TSW    5.500000E-09 
+       S1RLO  467            
+       S1RHI  200            
+      S2NAME X               
+       S2TSW    3.500000E-09 
+       S2RLO   42.9          
+       S2RHI  116            
+      S3NAME R               
+       S3TSW    3.500000E-09 
+       S3RLO   42.9          
+       S3RHI  116            
+      S4NAME F               
+       S4TSW    3.500000E-09 
+       S4RLO   42.9          
+       S4RHI  116            
+      S5NAME Z               
+       S5TSW    3.500000E-09 
+       S5RLO  200.000000E+03 
+       S5RHI  200.000000E+03 
+
+
+**** 07/02/112 22:00:10 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_4_1.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         
+      TPLHMN    0            
+      TPLHTY    0            
+      TPLHMX    0            
+      TPHLMN    0            
+      TPHLTY    0            
+      TPHLMX    0            
+
+
+**** 07/02/112 22:00:10 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_4_1.sch
+
+
+ ****     Digital Edge Triggered FF MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_EFF          
+  TPCLKQLHMN    0            
+  TPCLKQLHTY    0            
+  TPCLKQLHMX    0            
+  TPCLKQHLMN    0            
+  TPCLKQHLTY    0            
+  TPCLKQHLMX    0            
+   TPPCQLHMN    0            
+   TPPCQLHTY    0            
+   TPPCQLHMX    0            
+   TPPCQHLMN    0            
+   TPPCQHLTY    0            
+   TPPCQHLMX    0            
+    TWCLKLMN    0            
+    TWCLKLTY    0            
+    TWCLKLMX    0            
+    TWCLKHMN    0            
+    TWCLKHTY    0            
+    TWCLKHMX    0            
+     TWPCLMN    0            
+     TWPCLTY    0            
+     TWPCLMX    0            
+   TSUDCLKMN    0            
+   TSUDCLKTY    0            
+   TSUDCLKMX    0            
+ TSUPCCLKHMN    0            
+ TSUPCCLKHTY    0            
+ TSUPCCLKHMX    0            
+    THDCLKMN    0            
+    THDCLKTY    0            
+    THDCLKMX    0            
+  TSUCECLKMN    0            
+  TSUCECLKTY    0            
+  TSUCECLKMX    0            
+   THCECLKMN    0            
+   THCECLKTY    0            
+   THCECLKMX    0            
+
+
+**** 07/02/112 22:00:10 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_4_1.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          
+        DRVL    0             104            
+        DRVH    0              96.4          
+       AtoD1                 AtoD_STD        
+       AtoD2                 AtoD_STD_NX     
+       AtoD3                 AtoD_STD        
+       AtoD4                 AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        
+       DtoA2 DtoA_STM        DtoA_STD        
+       DtoA3 DtoA_STM        DtoA_STD        
+       DtoA4 DtoA_STM        DtoA_STD        
+      TSWHL1                    1.373000E-09 
+      TSWHL2                    1.346000E-09 
+      TSWHL3                    1.511000E-09 
+      TSWHL4                    1.487000E-09 
+      TSWLH1                    3.382000E-09 
+      TSWLH2                    3.424000E-09 
+      TSWLH3                    3.517000E-09 
+      TSWLH4                    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+**** 07/02/112 22:00:10 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_4_1.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( +12V)   12.0000  ( -12V)  -12.0000  (X_U1.6)-25.10E-06 (X_U1.7)     .2572     
+
+(X_U1.8)     .2572 (X_U1.9)    0.0000 ($G_DGND)    0.0000                       
+
+($G_DPWR)    5.0000                   ($N_0002)     .0597                       
+
+($N_0003)     .0745                   ($N_0004)     .0815                       
+
+($N_0005)     .0843                   ($N_0006)     .0899                       
+
+($N_0007)     .0899                   ($N_0008)     .0900                       
+
+($N_0017)     .0900                   ($N_0019)     .0843                       
+
+($N_0020)     .2530                   ($N_0023)   11.1140                       
+
+($N_0024)    7.0000                   (X_U1.10)    -.5234                       
+
+(X_U1.11)   11.9600                   (X_U1.12)   11.9600                       
+
+(X_U1.13)    -.5095                   (X_U1.14)    -.5095                       
+
+(X_U1.53)   11.0000                   (X_U1.54)  -11.0000                       
+
+(X_U1.90)     .0843                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                       
+
+(X_U2A.6)   -1.5687                   (X_U2A.7)   11.6710                       
+
+(X_U2A.8)   11.6710                   (X_U2A.9)    0.0000                       
+
+(X_U2A.10)     .8940                  (X_U2A.11)     .0816                      
+
+(X_U2A.12) 41.88E-09                  (X_U2A.13)     .8654                      
+
+(X_U2A.14)     .8940                  (X_U2A.53)   10.5000                      
+
+(X_U2A.54)     .6500                  (X_U2A.90)   11.1310                      
+
+(X_U2A.91)   40.0000                  (X_U2A.92)  -40.0000                      
+
+(X_U2A.99)    6.0000                  
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+($N_0017$DtoA) : 0                    (X_U2.ENT) : 1     ( X_U2.JA) : 1         
+
+( X_U2.JB) : 0     ( X_U2.QC) : 0     (X_U2.IEN) : 1     (X_U2.LOADBAR) : 1     
+
+($N_0007$DtoA) : 0                    ( X_U2.KC) : 0     (X_U2.CLK) : 0         
+
+(   $D_HI) : 1     (X_U2.ENP) : 1     (  X_U2.A) : 1     (X_U2.MCLK) : 1        
+
+( X_U2.JC) : 0     (  X_U2.B) : 1     (X_U2.CLRBAR) : 1  ($N_0008$DtoA) : 0     
+
+($N_0006$DtoA) : 0                    (   $D_NC) : Z     ( $N_0018) : 0         
+
+( X_U2.QD) : 0     ( $N_0001) : 0     (  X_U2.C) : 1     ( X_U2.QA) : 0         
+
+(  X_U2.D) : 1     ( X_U2.QB) : 0     (X_U2.RCO) : 0     ( X_U2.KD) : 0         
+
+( X_U2.KA) : 1     ( X_U2.KB) : 0     ( X_U2.JD) : 0     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.656E-03
+    V_V2        -1.337E-03
+    V_V3        -7.037E-12
+    X_U1.vb     -2.510E-10
+    X_U1.vc      1.075E-11
+    X_U1.ve      1.125E-11
+    X_U1.vlim    8.427E-05
+    X_U1.vlp    -3.992E-11
+    X_U1.vln    -4.009E-11
+    X_U2A.vb    -1.569E-05
+    X_U2A.vc    -1.663E-05
+    X_U2A.ve     1.047E-11
+    X_U2A.vlim   1.113E-02
+    X_U2A.vlp   -2.887E-11
+    X_U2A.vln   -5.113E-11
+    X$DIGIFPWR.VDPWR  -5.049E-02
+    X$DIGIFPWR.VDGND  -3.493E-05
+
+    TOTAL POWER DISSIPATION   3.00E-01  WATTS
+
+
+**** 07/02/112 22:00:10 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_4_1.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U1.ga     X_U1.gcm    X_U2A.ga    X_U2A.gcm 
+I-SOURCE    -2.869E-09  -3.120E-09   1.538E-05  -3.044E-07
+
+
+**** VOLTAGE-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U1.egnd   X_U2A.egnd
+V-SOURCE     0.000E+00   6.000E+00
+I-SOURCE    -8.431E-05  -1.113E-02
+
+
+**** CURRENT-CONTROLLED CURRENT SOURCES
+
+
+NAME         X_U1.fb     X_U2A.fb  
+I-SOURCE    -2.654E-03  -2.429E-01
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         X_U1.hlim   X_U2A.hlim
+V-SOURCE     8.427E-02   1.113E+01
+I-SOURCE    -1.686E-13  -2.226E-11
+
+
+**** DIODES
+
+
+NAME         X_U1.dc     X_U1.de     X_U1.dlp    X_U1.dln    X_U1.dp   
+MODEL        X_U1.dx     X_U1.dx     X_U1.dx     X_U1.dx     X_U1.dx   
+ID          -1.07E-11   -1.13E-11   -3.99E-11   -4.01E-11   -2.40E-11 
+VD          -1.07E+01   -1.13E+01   -3.99E+01   -4.01E+01   -2.40E+01 
+REQ          1.00E+12    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+NAME         X_U2A.dc    X_U2A.de    X_U2A.dlp   X_U2A.dln   X_U2A.dp  
+MODEL        X_U2A.dx    X_U2A.dx    X_U2A.dx    X_U2A.dx    X_U2A.dx  
+ID           1.66E-05   -1.05E-11   -2.89E-11   -5.11E-11   -1.20E-11 
+VD           6.14E-01   -1.05E+01   -2.89E+01   -5.11E+01   -1.20E+01 
+REQ          1.56E+03    1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CAP          0.00E+00    0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+
+
+**** BIPOLAR JUNCTION TRANSISTORS
+
+
+NAME         X_U1.q1     X_U1.q2     X_U2A.q1    X_U2A.q2  
+MODEL        X_U1.qx     X_U1.qx     X_U2A.qx    X_U2A.qx  
+IB           7.98E-08    7.98E-08   -9.23E-08    7.04E-12 
+IC           7.48E-06    7.48E-06   -1.54E-05   -7.89E-12 
+VBE          5.94E-01    5.94E-01   -6.12E-01    6.11E+00 
+VBC         -1.19E+01   -1.19E+01    1.71E-01    7.00E+00 
+VCE          1.25E+01    1.25E+01   -7.84E-01   -8.94E-01 
+BETADC       9.38E+01    9.38E+01    1.67E+02   -1.12E+00 
+GM           2.89E-04    2.89E-04    5.95E-04    0.00E+00 
+RPI          3.24E+05    3.24E+05    2.80E+05    1.67E+14 
+RX           0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+RO           1.00E+12    1.00E+12    1.00E+12    1.00E+12 
+CBE          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CBC          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+CJS          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+BETAAC       9.38E+01    9.38E+01    1.67E+02    0.00E+00 
+CBX          0.00E+00    0.00E+00    0.00E+00    0.00E+00 
+FT           4.60E+15    4.60E+15    9.47E+15    0.00E+00 
+
+
+**** 07/02/112 22:00:10 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_4_1.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+( +12V)   12.0000  ( -12V)  -12.0000  (X_U1.6)-25.10E-06 (X_U1.7)     .2572     
+
+(X_U1.8)     .2572 (X_U1.9)    0.0000 ($G_DGND)    0.0000                       
+
+($G_DPWR)    5.0000                   ($N_0002)     .0597                       
+
+($N_0003)     .0745                   ($N_0004)     .0815                       
+
+($N_0005)     .0843                   ($N_0006)     .0899                       
+
+($N_0007)     .0899                   ($N_0008)     .0900                       
+
+($N_0017)     .0900                   ($N_0019)     .0843                       
+
+($N_0020)     .2530                   ($N_0023)   11.1140                       
+
+($N_0024)    7.0000                   (X_U1.10)    -.5234                       
+
+(X_U1.11)   11.9600                   (X_U1.12)   11.9600                       
+
+(X_U1.13)    -.5095                   (X_U1.14)    -.5095                       
+
+(X_U1.53)   11.0000                   (X_U1.54)  -11.0000                       
+
+(X_U1.90)     .0843                   (X_U1.91)   40.0000                       
+
+(X_U1.92)  -40.0000                   (X_U1.99)    0.0000                       
+
+(X_U2A.6)   -1.5687                   (X_U2A.7)   11.6710                       
+
+(X_U2A.8)   11.6710                   (X_U2A.9)    0.0000                       
+
+(X_U2A.10)     .8940                  (X_U2A.11)     .0816                      
+
+(X_U2A.12) 41.88E-09                  (X_U2A.13)     .8654                      
+
+(X_U2A.14)     .8940                  (X_U2A.53)   10.5000                      
+
+(X_U2A.54)     .6500                  (X_U2A.90)   11.1310                      
+
+(X_U2A.91)   40.0000                  (X_U2A.92)  -40.0000                      
+
+(X_U2A.99)    6.0000                  
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+($N_0017$DtoA) : 0                    (X_U2.ENT) : 1     ( X_U2.JA) : 1         
+
+( X_U2.JB) : 0     ( X_U2.QC) : 0     (X_U2.IEN) : 1     (X_U2.LOADBAR) : 1     
+
+($N_0007$DtoA) : 0                    ( X_U2.KC) : 0     (X_U2.CLK) : 0         
+
+(   $D_HI) : 1     (X_U2.ENP) : 1     (  X_U2.A) : 1     (X_U2.MCLK) : 1        
+
+( X_U2.JC) : 0     (  X_U2.B) : 1     (X_U2.CLRBAR) : 1  ($N_0008$DtoA) : 0     
+
+($N_0006$DtoA) : 0                    (   $D_NC) : Z     ( $N_0018) : 0         
+
+( X_U2.QD) : 0     ( $N_0001) : 0     (  X_U2.C) : 1     ( X_U2.QA) : 0         
+
+(  X_U2.D) : 1     ( X_U2.QB) : 0     (X_U2.RCO) : 0     ( X_U2.KD) : 0         
+
+( X_U2.KA) : 1     ( X_U2.KB) : 0     ( X_U2.JD) : 0     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.656E-03
+    V_V2        -1.337E-03
+    V_V3        -7.037E-12
+    X_U1.vb     -2.510E-10
+    X_U1.vc      1.075E-11
+    X_U1.ve      1.125E-11
+    X_U1.vlim    8.426E-05
+    X_U1.vlp    -3.992E-11
+    X_U1.vln    -4.009E-11
+    X_U2A.vb    -1.569E-05
+    X_U2A.vc    -1.663E-05
+    X_U2A.ve     1.047E-11
+    X_U2A.vlim   1.113E-02
+    X_U2A.vlp   -2.887E-11
+    X_U2A.vln   -5.113E-11
+    X$DIGIFPWR.VDPWR  -5.049E-02
+    X$DIGIFPWR.VDGND  -3.493E-05
+
+    TOTAL POWER DISSIPATION   3.00E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .68
+

@@ -1,0 +1,79 @@
+*PCBoards Netlist Version 8.0: Format 1.0
+*timestamp: netlist 1341255626
+*component C CK05 C1
+@attribute VALUE=100n
+*component R RC05 R1
+@attribute VALUE=1k
+*component R RC05 R2
+@attribute VALUE=8k
+*component R RC05 R3
+@attribute VALUE=4k
+*component R RC05 R4
+@attribute VALUE=2k
+*component R RC05 R5
+@attribute VALUE=1k
+*component R RC05 R6
+@attribute VALUE=1k
+*component R RC05 R7
+@attribute VALUE=2k
+*component R RC05 R8
+@attribute VALUE=1k
+*component R RC05 R10
+@attribute VALUE=1k
+*component 7414 DIP14 U1
+*component 74161 DIP16 U2
+*component LM324 DIP14 U3
+*net 0
++ U3.2
++ C1.2
++ U3.6
++ R10.2
+*net DIG_GND
++ U2.8
++ U1.7
+*net DIG_PWR
++ U2.16
++ U1.14
+*net NN_0001
++ R6.2
++ U3.1
++ R7.1
+*net NN_0002
++ R6.1
++ U3.3
++ R2.2
++ R3.2
++ R4.2
++ R5.2
+*net NN_0003
++ R8.2
++ U3.7
++ U3.10
+*net NN_0004
++ R8.1
++ R7.2
++ U3.5
+*net NN_0005
++ R1.2
++ U2.2
++ U1.2
+*net NN_0006
++ R1.1
++ U1.1
++ C1.1
+*net NN_0015
++ U2.14
++ R2.1
+*net NN_0016
++ U2.13
++ R3.1
+*net NN_0017
++ U2.12
++ R4.1
+*net NN_0018
++ U2.11
++ R5.1
+*net NN_0021
++ U3.8
++ R10.1
+*End

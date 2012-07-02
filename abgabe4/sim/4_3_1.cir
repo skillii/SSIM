@@ -1,0 +1,24 @@
+* C:\MSimEv_8\Projects\ue4\4_3_1.sch
+
+* Schematics Version 8.0 - July 1997
+* Mon Jul 02 20:33:59 2012
+
+
+
+** Analysis setup **
+.tran 20ns 2ms
+.OPTIONS DIGINITSTATE=0
+.OPTIONS DIGMNTYMX=2
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "4_3_1.net"
+.INC "4_3_1.als"
+
+
+.probe
+
+
+.END

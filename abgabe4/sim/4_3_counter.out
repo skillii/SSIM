@@ -1,0 +1,251 @@
+
+**** 07/02/112 20:30:02 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_3_counter.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 8.0 - July 1997
+* Mon Jul 02 20:30:02 2012
+
+
+
+** Analysis setup **
+.tran 20ns 20us SKIPBP
+.OPTIONS DIGINITSTATE=0
+.OPTIONS DIGMNTYMX=2
+.OP 
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "4_3_counter.net"
+
+**** INCLUDING 4_3_counter.net ****
+* Schematics Netlist *
+
+
+
+X_U2         $N_0001 Qa0 $D_LO $D_LO Qa0 Qa1 Qa2 Qa3 $G_DPWR $G_DGND 74293
++  PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND $N_0001 IO_STM IO_LEVEL=0 
++ 0 0
++ +.5uS 1
++REPEAT FOREVER
++ +.5uS 0
++  +.5uS 1
++ ENDREPEAT
+X_U4         $N_0004 $D_HI $N_0006 $N_0007 Qb0 Qb1 Qb2 Qb3 Q0 Q1 Q2 Q3 $G_DPWR
++  $G_DGND 74176 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U7A         Qa0 Qa1 Qa2 Qa3 $N_0008 $G_DPWR $G_DGND 7420 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM2         STIM(1,1) $G_DPWR $G_DGND $N_0009 IO_STM IO_LEVEL=0 
++ 0 0
++ +1uS 1
++REPEAT FOREVER
++ +1uS 0
++  +1uS 1
++ ENDREPEAT
+X_U15A         $N_0009 $N_0010 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U16A         $N_0010 $N_0011 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U3         $N_0011 Qb0 $N_0012 $N_0012 Qb0 Qb1 Qb2 Qb3 $G_DPWR $G_DGND 74293
++  PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U11A         $N_0013 $N_0014 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U10A         $N_0001 $N_0013 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U17A         $N_0014 $N_0008 $N_0004 $G_DPWR $G_DGND 7432 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U14A         $N_0013 $N_0008 $N_0015 $G_DPWR $G_DGND 7402 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U18A         $N_0015 $N_0016 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U19A         $N_0016 $N_0012 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+**** RESUMING 4_3_counter.cir ****
+.INC "4_3_counter.als"
+
+
+
+**** INCLUDING 4_3_counter.als ****
+* Schematics Aliases *
+
+.ALIASES
+X_U2            U2(CLKA=$N_0001 CLKB=Qa0 R01=$D_LO R02=$D_LO QA=Qa0 QB=Qa1
++  QC=Qa2 QD=Qa3 PWR=$G_DPWR GND=$G_DGND )
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND 1=$N_0001 )
+X_U4            U4(LOADbar=$N_0004 CLRbar=$D_HI CLK1=$N_0006 CLK2=$N_0007 A=Qb0
++  B=Qb1 C=Qb2 D=Qb3 QA=Q0 QB=Q1 QC=Q2 QD=Q3 PWR=$G_DPWR GND=$G_DGND )
+X_U7A           U7A(A=Qa0 B=Qa1 C=Qa2 D=Qa3 Y=$N_0008 PWR=$G_DPWR GND=$G_DGND )
+U_DSTM2          DSTM2(PWR=$G_DPWR GND=$G_DGND 1=$N_0009 )
+X_U15A          U15A(A=$N_0009 Y=$N_0010 PWR=$G_DPWR GND=$G_DGND )
+X_U16A          U16A(A=$N_0010 Y=$N_0011 PWR=$G_DPWR GND=$G_DGND )
+X_U3            U3(CLKA=$N_0011 CLKB=Qb0 R01=$N_0012 R02=$N_0012 QA=Qb0 QB=Qb1
++  QC=Qb2 QD=Qb3 PWR=$G_DPWR GND=$G_DGND )
+X_U11A          U11A(A=$N_0013 Y=$N_0014 PWR=$G_DPWR GND=$G_DGND )
+X_U10A          U10A(A=$N_0001 Y=$N_0013 PWR=$G_DPWR GND=$G_DGND )
+X_U17A          U17A(A=$N_0014 B=$N_0008 Y=$N_0004 PWR=$G_DPWR GND=$G_DGND )
+X_U14A          U14A(A=$N_0013 B=$N_0008 Y=$N_0015 PWR=$G_DPWR GND=$G_DGND )
+X_U18A          U18A(A=$N_0015 Y=$N_0016 PWR=$G_DPWR GND=$G_DGND )
+X_U19A          U19A(A=$N_0016 Y=$N_0012 PWR=$G_DPWR GND=$G_DGND )
+_    _(Qa0=Qa0)
+_    _(Qa1=Qa1)
+_    _(Qa2=Qa2)
+_    _(Qa3=Qa3)
+_    _(Qb0=Qb0)
+_    _(Qb1=Qb1)
+_    _(Qb2=Qb2)
+_    _(Qb3=Qb3)
+_    _(Q0=Q0)
+_    _(Q1=Q1)
+_    _(Q2=Q2)
+_    _(Q3=Q3)
+_    _($G_DGND=$G_DGND)
+_    _($G_DPWR=$G_DPWR)
+.ENDALIASES
+
+
+**** RESUMING 4_3_counter.cir ****
+.probe
+
+
+.END
+
+**** 07/02/112 20:30:02 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_3_counter.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         D_20            D_32            D_02            
+      TPLHMN    0               4.800000E-09    4.000000E-09    4.800000E-09 
+      TPLHTY    0              12.000000E-09   10.000000E-09   12.000000E-09 
+      TPLHMX    0              22.000000E-09   15.000000E-09   22.000000E-09 
+      TPHLMN    0               3.200000E-09    5.600000E-09    3.200000E-09 
+      TPHLTY    0               8.000000E-09   14.000000E-09    8.000000E-09 
+      TPHLMX    0              15.000000E-09   22.000000E-09   15.000000E-09 
+
+
+               D_04            
+      TPLHMN    4.800000E-09 
+      TPLHTY   12.000000E-09 
+      TPLHMX   22.000000E-09 
+      TPHLMN    3.200000E-09 
+      TPHLTY    8.000000E-09 
+      TPHLMX   15.000000E-09 
+
+
+**** 07/02/112 20:30:02 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_3_counter.sch
+
+
+ ****     Digital Edge Triggered FF MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_EFF          
+  TPCLKQLHMN    0            
+  TPCLKQLHTY    0            
+  TPCLKQLHMX    0            
+  TPCLKQHLMN    0            
+  TPCLKQHLTY    0            
+  TPCLKQHLMX    0            
+   TPPCQLHMN    0            
+   TPPCQLHTY    0            
+   TPPCQLHMX    0            
+   TPPCQHLMN    0            
+   TPPCQHLTY    0            
+   TPPCQHLMX    0            
+    TWCLKLMN    0            
+    TWCLKLTY    0            
+    TWCLKLMX    0            
+    TWCLKHMN    0            
+    TWCLKHTY    0            
+    TWCLKHMX    0            
+     TWPCLMN    0            
+     TWPCLTY    0            
+     TWPCLMX    0            
+   TSUDCLKMN    0            
+   TSUDCLKTY    0            
+   TSUDCLKMX    0            
+ TSUPCCLKHMN    0            
+ TSUPCCLKHTY    0            
+ TSUPCCLKHMX    0            
+    THDCLKMN    0            
+    THDCLKTY    0            
+    THDCLKMX    0            
+  TSUCECLKMN    0            
+  TSUCECLKTY    0            
+  TSUCECLKMX    0            
+   THCECLKMN    0            
+   THCECLKTY    0            
+   THCECLKMX    0            
+
+
+**** 07/02/112 20:30:02 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_3_counter.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          
+        DRVL    0             104            
+        DRVH    0              96.4          
+       AtoD1                 AtoD_STD        
+       AtoD2                 AtoD_STD_NX     
+       AtoD3                 AtoD_STD        
+       AtoD4                 AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        
+       DtoA2 DtoA_STM        DtoA_STD        
+       DtoA3 DtoA_STM        DtoA_STD        
+       DtoA4 DtoA_STM        DtoA_STD        
+      TSWHL1                    1.373000E-09 
+      TSWHL2                    1.346000E-09 
+      TSWHL3                    1.511000E-09 
+      TSWHL4                    1.487000E-09 
+      TSWLH1                    3.382000E-09 
+      TSWLH2                    3.424000E-09 
+      TSWLH3                    3.517000E-09 
+      TSWLH4                    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+WARNING -- No analog devices -- Small-Signal analysis ignored
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .04
+

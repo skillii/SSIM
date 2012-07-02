@@ -1,0 +1,574 @@
+
+**** 07/02/112 20:33:59 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_3_1.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 8.0 - July 1997
+* Mon Jul 02 20:33:59 2012
+
+
+
+** Analysis setup **
+.tran 20ns 2ms
+.OPTIONS DIGINITSTATE=0
+.OPTIONS DIGMNTYMX=2
+
+
+* From [SCHEMATICS NETLIST] section of msim.ini:
+.lib nom.lib
+
+.INC "4_3_1.net"
+
+**** INCLUDING 4_3_1.net ****
+* Schematics Netlist *
+
+
+
+X_U2         $N_0002 $N_0003 VCC 0 $N_0001 0 LM111
+R_R3         $N_0001 $G_DPWR  1k  
+X_U1A         $N_0006 $N_0007 VCC 0 $N_0002 LM324
+X_U3A         $D_HI $N_0001 $N_0008 $D_HI $N_0011 $N_0012 $G_DPWR $G_DGND 7474
++  PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+E_E1         $N_0013 0 TABLE { V($N_0011, 0) } 
++ ( (0.4,0) (2.4,15) )
+V_V2         VCC 0 15V
+R_R2         0 $N_0003  10k  
+R_R1         $N_0003 VCC  10k  
+R_R4         $N_0013 $N_0007  220k  
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND $N_0008 IO_STM IO_LEVEL=0 
++ 0 0
++ +10uS 1
++REPEAT FOREVER
++ +10uS 0
++  +10uS 1
++ ENDREPEAT
+C_C1         $N_0002 $N_0007  1.5n  
+X_U14A         Qa0 Qa1 Qa2 Qa3 $N_0014 $G_DPWR $G_DGND 7420 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U18A         $N_0015 $N_0016 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U21A         $N_0015 $N_0014 $N_0017 $G_DPWR $G_DGND 7402 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U22A         $N_0017 $N_0018 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U23A         $N_0018 $N_0019 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U17         $N_0020 Qb0 $N_0019 $N_0019 Qb0 Qb1 Qb2 Qb3 $G_DPWR $G_DGND 74293
++  PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U19A         $N_0021 $N_0015 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U12         $N_0021 Qa0 $D_LO $D_LO Qa0 Qa1 Qa2 Qa3 $G_DPWR $G_DGND 74293
++  PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U24A         $N_0008 $N_0024 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U25A         $N_0024 $N_0021 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U5A         $N_0012 $N_0008 $N_0020 $G_DPWR $G_DGND 7402 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U20A         $N_0016 $N_0014 $N_0025 $G_DPWR $G_DGND 7432 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U13         $N_0025 $D_HI $D_LO $D_LO Qb0 Qb1 Qb2 Qb3 Q0 Q1 Q2 Q3 $G_DPWR
++  $G_DGND 74176 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+V_V1         $N_0006 0 2V
+
+**** RESUMING 4_3_1.cir ****
+.INC "4_3_1.als"
+
+
+
+**** INCLUDING 4_3_1.als ****
+* Schematics Aliases *
+
+.ALIASES
+X_U2            U2(+=$N_0002 -=$N_0003 V+=VCC V-=0 OUT=$N_0001 G=0 )
+R_R3            R3(1=$N_0001 2=$G_DPWR )
+X_U1A           U1A(+=$N_0006 -=$N_0007 V+=VCC V-=0 OUT=$N_0002 )
+X_U3A           U3A(CLRbar=$D_HI D=$N_0001 CLK=$N_0008 PREbar=$D_HI Q=$N_0011
++  Qbar=$N_0012 PWR=$G_DPWR GND=$G_DGND )
+E_E1            E1(OUT+=$N_0013 OUT-=0 IN+=$N_0011 IN-=0 )
+V_V2            V2(+=VCC -=0 )
+R_R2            R2(1=0 2=$N_0003 )
+R_R1            R1(1=$N_0003 2=VCC )
+R_R4            R4(1=$N_0013 2=$N_0007 )
+U_DSTM1          DSTM1(PWR=$G_DPWR GND=$G_DGND 1=$N_0008 )
+C_C1            C1(1=$N_0002 2=$N_0007 )
+X_U14A          U14A(A=Qa0 B=Qa1 C=Qa2 D=Qa3 Y=$N_0014 PWR=$G_DPWR GND=$G_DGND
++  )
+X_U18A          U18A(A=$N_0015 Y=$N_0016 PWR=$G_DPWR GND=$G_DGND )
+X_U21A          U21A(A=$N_0015 B=$N_0014 Y=$N_0017 PWR=$G_DPWR GND=$G_DGND )
+X_U22A          U22A(A=$N_0017 Y=$N_0018 PWR=$G_DPWR GND=$G_DGND )
+X_U23A          U23A(A=$N_0018 Y=$N_0019 PWR=$G_DPWR GND=$G_DGND )
+X_U17           U17(CLKA=$N_0020 CLKB=Qb0 R01=$N_0019 R02=$N_0019 QA=Qb0 QB=Qb1
++  QC=Qb2 QD=Qb3 PWR=$G_DPWR GND=$G_DGND )
+X_U19A          U19A(A=$N_0021 Y=$N_0015 PWR=$G_DPWR GND=$G_DGND )
+X_U12           U12(CLKA=$N_0021 CLKB=Qa0 R01=$D_LO R02=$D_LO QA=Qa0 QB=Qa1
++  QC=Qa2 QD=Qa3 PWR=$G_DPWR GND=$G_DGND )
+X_U24A          U24A(A=$N_0008 Y=$N_0024 PWR=$G_DPWR GND=$G_DGND )
+X_U25A          U25A(A=$N_0024 Y=$N_0021 PWR=$G_DPWR GND=$G_DGND )
+X_U5A           U5A(A=$N_0012 B=$N_0008 Y=$N_0020 PWR=$G_DPWR GND=$G_DGND )
+X_U20A          U20A(A=$N_0016 B=$N_0014 Y=$N_0025 PWR=$G_DPWR GND=$G_DGND )
+X_U13           U13(LOADbar=$N_0025 CLRbar=$D_HI CLK1=$D_LO CLK2=$D_LO A=Qb0
++  B=Qb1 C=Qb2 D=Qb3 QA=Q0 QB=Q1 QC=Q2 QD=Q3 PWR=$G_DPWR GND=$G_DGND )
+V_V1            V1(+=$N_0006 -=0 )
+_    _(VCC=VCC)
+_    _(Qa0=Qa0)
+_    _(Qa1=Qa1)
+_    _(Qa2=Qa2)
+_    _(Qa3=Qa3)
+_    _(Qb0=Qb0)
+_    _(Qb1=Qb1)
+_    _(Qb2=Qb2)
+_    _(Qb3=Qb3)
+_    _($G_DGND=$G_DGND)
+_    _($G_DPWR=$G_DPWR)
+_    _(Q0=Q0)
+_    _(Q1=Q1)
+_    _(Q2=Q2)
+_    _(Q3=Q3)
+.ENDALIASES
+
+
+**** RESUMING 4_3_1.cir ****
+.probe
+
+
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node $N_0011
+*
+* Moving X_U3A.UFF1:Q1 from analog node $N_0011 to new digital node $N_0011$DtoA
+X$$N_0011_DtoA1
++ $N_0011$DtoA
++ $N_0011
++ $G_DPWR
++ $G_DGND
++ DtoA_STD
++       PARAMS: DRVH=  96.4   DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface for node $N_0001
+*
+* Moving X_U3A.UFF1:D1 from analog node $N_0001 to new digital node $N_0001$AtoD
+X$$N_0001_AtoD1
++ $N_0001
++ $N_0001$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+
+X$DIGIFPWR 0 DIGIFPWR
+
+**** 07/02/112 20:33:59 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_3_1.sch
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.dx         X_U1A.dx        D74CLMP         D74             
+          IS  800.000000E-18  800.000000E-18    1.000000E-15  100.000000E-18 
+          RS    1               1               2              25            
+         CJO                                    2.000000E-12    2.000000E-12 
+
+
+**** 07/02/112 20:33:59 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_3_1.sch
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.qin        X_U2.qmi        X_U2.qmo        X_U2.qoc        
+               PNP             NPN             NPN             NPN             
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          BF  833.3             1.002000E+03    1.000000E+03   34.490000E+03 
+          NF    1               1               1               1            
+          BR    1               1               1               1            
+          NR    1               1               1               1            
+         CJC                                    1.000000E-15    1.000000E-15 
+          TF                                                  364.600000E-12 
+          TR                                  118.800000E-09   79.340000E-09 
+
+
+               X_U1A.qx        Q74             
+               PNP             NPN             
+          IS  800.000000E-18  100.000000E-18 
+          BF  166.7            49            
+          NF    1               1            
+         ISE                  100.000000E-18 
+          BR    1                .03         
+          NR    1               1            
+         ISC                  400.000000E-18 
+          RB                   50            
+          RC                   20            
+         CJE                    1.000000E-12 
+         VJE                     .9          
+         MJE                     .5          
+         CJC                  500.000000E-15 
+         VJC                     .8          
+         CJS                    3.000000E-12 
+         VJS                     .7          
+         MJS                     .33         
+          TF                  200.000000E-12 
+          TR                   10.000000E-09 
+
+
+**** 07/02/112 20:33:59 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_3_1.sch
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DIN74           
+        FILE DSO_DTOA        
+      FORMAT    6            
+    TIMESTEP  100.000000E-12 
+      S0NAME 0               
+       S0TSW    3.500000E-09 
+       S0RLO    7.13         
+       S0RHI  389            
+      S1NAME 1               
+       S1TSW    5.500000E-09 
+       S1RLO  467            
+       S1RHI  200            
+      S2NAME X               
+       S2TSW    3.500000E-09 
+       S2RLO   42.9          
+       S2RHI  116            
+      S3NAME R               
+       S3TSW    3.500000E-09 
+       S3RLO   42.9          
+       S3RHI  116            
+      S4NAME F               
+       S4TSW    3.500000E-09 
+       S4RLO   42.9          
+       S4RHI  116            
+      S5NAME Z               
+       S5TSW    3.500000E-09 
+       S5RLO  200.000000E+03 
+       S5RHI  200.000000E+03 
+
+
+**** 07/02/112 20:33:59 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_3_1.sch
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO74            
+        FILE DSO_ATOD        
+      FORMAT    6            
+     CHGONLY    1            
+    TIMESTEP  100.000000E-12 
+      S0NAME X               
+       S0VHI    2            
+       S0VLO     .8          
+      S1NAME 0               
+       S1VHI     .8          
+       S1VLO   -1.5          
+      S2NAME R               
+       S2VHI    1.4          
+       S2VLO     .8          
+      S3NAME R               
+       S3VHI    2            
+       S3VLO    1.3          
+      S4NAME X               
+       S4VHI    2            
+       S4VLO     .8          
+      S5NAME 1               
+       S5VHI    7            
+       S5VLO    2            
+      S6NAME F               
+       S6VHI    2            
+       S6VLO    1.3          
+      S7NAME F               
+       S7VHI    1.4          
+       S7VLO     .8          
+
+
+**** 07/02/112 20:33:59 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_3_1.sch
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_20            D_04            D_02            D_32            
+      TPLHMN    4.800000E-09    4.800000E-09    4.800000E-09    4.000000E-09 
+      TPLHTY   12.000000E-09   12.000000E-09   12.000000E-09   10.000000E-09 
+      TPLHMX   22.000000E-09   22.000000E-09   22.000000E-09   15.000000E-09 
+      TPHLMN    3.200000E-09    3.200000E-09    3.200000E-09    5.600000E-09 
+      TPHLTY    8.000000E-09    8.000000E-09    8.000000E-09   14.000000E-09 
+      TPHLMX   15.000000E-09   15.000000E-09   15.000000E-09   22.000000E-09 
+
+
+               D0_GATE         
+      TPLHMN    0            
+      TPLHTY    0            
+      TPLHMX    0            
+      TPHLMN    0            
+      TPHLTY    0            
+      TPHLMX    0            
+
+
+**** 07/02/112 20:33:59 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_3_1.sch
+
+
+ ****     Digital Edge Triggered FF MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_74            D0_EFF          
+  TPCLKQLHMN    5.600000E-09    0            
+  TPCLKQLHTY   14.000000E-09    0            
+  TPCLKQLHMX   25.000000E-09    0            
+  TPCLKQHLMN    8.000000E-09    0            
+  TPCLKQHLTY   20.000000E-09    0            
+  TPCLKQHLMX   40.000000E-09    0            
+   TPPCQLHMN    6.250000E-09    0            
+   TPPCQLHTY   15.625000E-09    0            
+   TPPCQLHMX   25.000000E-09    0            
+   TPPCQHLMN   10.000000E-09    0            
+   TPPCQHLTY   25.000000E-09    0            
+   TPPCQHLMX   40.000000E-09    0            
+    TWCLKLMN   37.000000E-09    0            
+    TWCLKLTY   37.000000E-09    0            
+    TWCLKLMX   37.000000E-09    0            
+    TWCLKHMN   30.000000E-09    0            
+    TWCLKHTY   30.000000E-09    0            
+    TWCLKHMX   30.000000E-09    0            
+     TWPCLMN   30.000000E-09    0            
+     TWPCLTY   30.000000E-09    0            
+     TWPCLMX   30.000000E-09    0            
+   TSUDCLKMN   20.000000E-09    0            
+   TSUDCLKTY   20.000000E-09    0            
+   TSUDCLKMX   20.000000E-09    0            
+ TSUPCCLKHMN    0               0            
+ TSUPCCLKHTY    0               0            
+ TSUPCCLKHMX    0               0            
+    THDCLKMN    5.000000E-09    0            
+    THDCLKTY    5.000000E-09    0            
+    THDCLKMX    5.000000E-09    0            
+  TSUCECLKMN    0               0            
+  TSUCECLKTY    0               0            
+  TSUCECLKMX    0               0            
+   THCECLKMN    0               0            
+   THCECLKTY    0               0            
+   THCECLKMX    0               0            
+
+
+**** 07/02/112 20:33:59 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_3_1.sch
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          
+        DRVL    0             104            
+        DRVH    0              96.4          
+       AtoD1                 AtoD_STD        
+       AtoD2                 AtoD_STD_NX     
+       AtoD3                 AtoD_STD        
+       AtoD4                 AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        
+       DtoA2 DtoA_STM        DtoA_STD        
+       DtoA3 DtoA_STM        DtoA_STD        
+       DtoA4 DtoA_STM        DtoA_STD        
+      TSWHL1                    1.373000E-09 
+      TSWHL2                    1.346000E-09 
+      TSWHL3                    1.511000E-09 
+      TSWHL4                    1.487000E-09 
+      TSWLH1                    3.382000E-09 
+      TSWLH2                    3.424000E-09 
+      TSWLH3                    3.517000E-09 
+      TSWLH4                    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+**** 07/02/112 20:33:59 ******** NT Evaluation PSpice (July 1997) ************
+
+ * C:\MSimEv_8\Projects\ue4\4_3_1.sch
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VCC)   15.0000  (X_U2.7)    8.6114 (X_U2.8)     .6503 (X_U2.9)     .0179     
+
+($G_DGND)    0.0000                   ($G_DPWR)    5.0000                       
+
+($N_0001)    4.9796                   ($N_0002)   14.1150                       
+
+($N_0003)    7.5006                   ($N_0006)    2.0000                       
+
+($N_0007)     .0205                   ($N_0011)     .0900                       
+
+($N_0013)    0.0000                   (X_U1A.6)   -1.5921                       
+
+(X_U1A.7)   14.1160                   (X_U1A.8)   14.1160                       
+
+(X_U1A.9)    0.0000                   (X_U2.10)     .0179                       
+
+(X_U2.11)     .0179                   (X_U2.21)   14.5650                       
+
+(X_U2.22)    7.9506                   (X_U1A.10)     .6619                      
+
+(X_U1A.11)     .0823                  (X_U1A.12) 14.13E-09                      
+
+(X_U1A.13)     .6331                  (X_U1A.14)     .6619                      
+
+(X_U1A.53)   13.5000                  (X_U1A.54)     .6500                      
+
+(X_U1A.90)     .0169                  (X_U1A.91)   40.0000                      
+
+(X_U1A.92)  -40.0000                  (X_U1A.99)    7.5000                      
+
+(X$$N_0001_AtoD1.1)    1.5648         (X$$N_0001_AtoD1.2)     .7824             
+
+(X$$N_0001_AtoD1.3)    2.2862         
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+( $N_0019) : 0     (     Qb2) : 0     (X_U12.X1.QA) : 0  (X_U13.SC) : 1         
+
+(      Q1) : 0     (X_U12.X1.R01) : 0                    ( $N_0020) : 0         
+
+(X_U12.X1.R02) : 0                    ( $N_0025) : 1     (     Qa2) : 0         
+
+(X_U17.X1.QC) : 0  (X_U13.CLK2) : 0   (   $D_HI) : 1     (X_U12.X1.CLRBAR) : 1  
+
+( $N_0015) : 1     ($N_0011$DtoA) : 0                    (X_U12.X1.CKA) : 0     
+
+( $N_0016) : 0     (     Qb3) : 0     (X_U12.X1.CKB) : 0                        
+
+(X_U12.X1.QB) : 0  (     Qb0) : 0     ( X_U13.D) : 0     (X_U13.QD) : 0         
+
+(      Q2) : 0     ( X_U13.A) : 0     ( $N_0021) : 0     (X_U13.QA) : 0         
+
+(X_U12.X1.QD) : 0  ( X_U13.B) : 0     (X_U13.QB) : 0     (X_U13.LOADBAR) : 1    
+
+(     Qa3) : 0     (X_U17.X1.CKA) : 0                    (X_U17.X1.CLRBAR) : 1  
+
+(X_U17.X1.R01) : 0                    (     Qa0) : 0     (X_U17.X1.CKB) : 0     
+
+(X_U13.RD) : 1     (X_U17.X1.QA) : 0  (X_U17.X1.R02) : 0                        
+
+(X_U13.RA) : 1     ( $N_0012) : 1     (X_U13.RB) : 1     (   $D_NC) : Z         
+
+(   $D_LO) : 0     (X_U13.CLRBAR) : 1                    ( $N_0017) : 0         
+
+(X_U13.SD) : 1     ($N_0001$AtoD) : 1                    ( $N_0018) : 1         
+
+(X_U12.X1.QC) : 0  (     Qb1) : 0     (X_U13.SA) : 1     (      Q3) : 0         
+
+(X_U13.SB) : 1     (      Q0) : 0     ( X_U13.C) : 0     (X_U13.QC) : 0         
+
+(X_U13.QDBAR) : 1  ( $N_0024) : 1     ( $N_0008) : 0     (     Qa1) : 0         
+
+(X_U17.X1.QB) : 0  (X_U13.CLK1) : 0   (X_U13.RC) : 1     (X_U17.X1.QD) : 0      
+
+(X_U13.JD) : 0     ( $N_0014) : 1     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -4.950E-03
+    V_V1        -2.009E-12
+    X_U2.vi1    -1.455E-11
+    X_U2.vi2     1.199E-07
+    X_U2.v1     -4.963E-12
+    X_U1A.vb    -1.592E-05
+    X_U1A.vc    -1.688E-05
+    X_U1A.ve     1.347E-11
+    X_U1A.vlim   1.688E-05
+    X_U1A.vlp   -3.998E-11
+    X_U1A.vln   -4.002E-11
+    X$DIGIFPWR.VDPWR  -1.333E-02
+    X$DIGIFPWR.VDGND  -5.000E-06
+
+    TOTAL POWER DISSIPATION   1.41E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .48
+
